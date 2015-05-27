@@ -10,6 +10,7 @@ public class Moteur {
 	 * Methode principale
 	 * 
 	 * @param args
+	 * 		Arguments lors de l'execution
 	 */
 	public static void main(String[] args) {
 		
