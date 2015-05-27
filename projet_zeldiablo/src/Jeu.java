@@ -2,9 +2,16 @@
 public class Jeu {
 
 	
+	/**
+	 * Attribut representant le heros du jeu
+	 */
+	
 	Aventurier heros;
 	
 	
+	/**
+	 * Constructeur sans parametres qui construit un nouveau heros
+	 */
 	
 	public Jeu(){
 			
@@ -13,6 +20,12 @@ public class Jeu {
 	}
 	
  	
+	/**
+	 * Methode qui permet au heros de se deplacer
+	 * 
+	 * @param dir
+	 * 			Commande a executer
+	 */
 	
 	
 	public void deplaceHeros(String dir){
