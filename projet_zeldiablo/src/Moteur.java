@@ -36,7 +36,7 @@ public class Moteur {
 		Scanner sc = new Scanner(System.in);
 		String dir;
 		
-		System.out.print("Quel commande souhaitez-vous exécuter ? : ");
+		System.out.print("Quel commande souhaitez-vous executer ? : ");
 		dir = sc.nextLine();
 		System.out.println("");
 		
