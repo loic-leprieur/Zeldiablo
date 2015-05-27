@@ -6,6 +6,8 @@ import org.junit.*;
 
 import application.Aventurier;
 
+import application.Aventurier;
+
 public class TestsAventurier {
 
 	/**
