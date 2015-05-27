@@ -16,13 +16,13 @@ public class TestsAventurier {
 	 */
 	@Test
 	public void TestPositionInitiale(){
-		//mise en place
+		//Preparation des donnees
 		Aventurier zelda = new Aventurier();
 		
-		//test
+		//Methode testee
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==5);
 		
-		//verifications
+		//Validation des resultats
 		assertEquals("Doit se trouver en position 5.5",true, res);
 		
 	}
@@ -32,13 +32,13 @@ public class TestsAventurier {
 	 */
 	@Test
 	public void TestDeplacementGauche(){
-		//Mise en place 
+		//Preparation des donnees
 		Aventurier zelda = new Aventurier();
 		
-		//Test
+		//Methode testee
 		zelda.seDeplacer(-2,0);
 		boolean res = (zelda.getPosX()==3 && zelda.getPosY()==5);
-		//Verification
+		//Validation ds resultats
 		assertEquals("Aventurier doit se trouve en position 3.5",true,res);
 	}
 	
@@ -48,13 +48,13 @@ public class TestsAventurier {
 	 */
 	@Test
 	public void TestDeplacementDroite(){
-		//Mise en place 
+		//Preparation des donnees
 		Aventurier zelda = new Aventurier();
 		
-		//Test
+		//Methode testee
 		zelda.seDeplacer(2,0);
 		boolean res = (zelda.getPosX()==7 && zelda.getPosY()==5);
-		//Verification
+		//Validation des resultats
 		assertEquals("Aventurier doit se trouve en position 7.5",true,res);
 	}
 	
@@ -63,13 +63,13 @@ public class TestsAventurier {
 	 */
 	@Test
 	public void TestDeplacementHaut(){
-		//Mise en place 
+		//Preparation des donnees
 		Aventurier zelda = new Aventurier();
 		
-		//Test
+		//Methode testee
 		zelda.seDeplacer(0,-2);
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==3);
-		//Verification
+		//Validation des resultats
 		assertEquals("Aventurier doit se trouve en position 5.3",true,res);
 	}
 	
@@ -78,13 +78,13 @@ public class TestsAventurier {
 	 */
 	@Test
 	public void TestDeplacementBas(){
-		//Mise en place 
+		//Preparation des donnees
 		Aventurier zelda = new Aventurier();
 		
-		//Test
+		//Methode testee
 		zelda.seDeplacer(0,2);
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==7);
-		//Verification
+		//Validation des resultats
 		assertEquals("Aventurier doit se trouve en position 5.7",true,res);
 	}
 	
