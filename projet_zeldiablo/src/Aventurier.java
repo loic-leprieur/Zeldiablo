@@ -24,6 +24,15 @@ public class Aventurier {
 		posX+=x;
 		posY+=y;
 	}
+	
+	/**
+	 * affichage des infos
+	 * d'un aventurier
+	 */
+	@Override
+	public String toString() {
+		return "Aventurier [posX=" + posX + ", posY=" + posY + "]";
+	}
 
 	public int getPosX() {
 		return posX;
