@@ -2,8 +2,9 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import src.*;
 import org.junit.*;
+
+import application.Aventurier;
 
 public class TestsAventurier {
 
