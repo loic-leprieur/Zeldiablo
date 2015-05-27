@@ -17,11 +17,13 @@ public class Moteur {
 		//Creation du jeu
 		Jeu j = new Jeu();
 		
-		//Demande d'une commande a executer a l'utilisateur
-		String dir = demandeUtilisateur();
-		
-		//Demande au jeu de deplacer le heros
-		j.deplaceHeros(dir);
+		while(true) {
+			//Demande de commandes a executer a l'utilisateur
+			String dir = demandeUtilisateur();
+			
+			//Demande au jeu de deplacer le heros
+			j.deplaceHeros(dir);
+		}
 
 	}
 	
@@ -35,8 +37,8 @@ public class Moteur {
 	public static String demandeUtilisateur() {
 		
 		Scanner sc = new Scanner(System.in);
-		String dir;
-		
+		String dir = "";
+
 		System.out.print("Quelle commande souhaitez-vous executer ? : ");
 		dir = sc.nextLine();
 		System.out.println("");
