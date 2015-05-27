@@ -22,7 +22,7 @@ public class TestsAventurier {
 		//test
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==5);
 		
-		//v�rifications
+		//verifications
 		assertEquals("Doit se trouver en position 5.5",true, res);
 		
 	}
@@ -38,7 +38,7 @@ public class TestsAventurier {
 		//Test
 		zelda.seDeplacer(-2,0);
 		boolean res = (zelda.getPosX()==3 && zelda.getPosY()==5);
-		//V�rification
+		//Verification
 		assertEquals("Aventurier doit se trouve en position 3.5",true,res);
 	}
 	
@@ -54,7 +54,7 @@ public class TestsAventurier {
 		//Test
 		zelda.seDeplacer(2,0);
 		boolean res = (zelda.getPosX()==7 && zelda.getPosY()==5);
-		//V�rification
+		//Verification
 		assertEquals("Aventurier doit se trouve en position 7.5",true,res);
 	}
 	
@@ -69,7 +69,7 @@ public class TestsAventurier {
 		//Test
 		zelda.seDeplacer(0,-2);
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==3);
-		//V�rification
+		//Verification
 		assertEquals("Aventurier doit se trouve en position 5.3",true,res);
 	}
 	
@@ -84,7 +84,7 @@ public class TestsAventurier {
 		//Test
 		zelda.seDeplacer(0,2);
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==7);
-		//V�rification
+		//Verification
 		assertEquals("Aventurier doit se trouve en position 5.7",true,res);
 	}
 	
