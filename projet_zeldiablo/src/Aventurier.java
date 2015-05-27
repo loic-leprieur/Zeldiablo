@@ -11,8 +11,8 @@ public class Aventurier {
 	 * de l'aventurier
 	 */
 	public Aventurier(){
-		posX=0;
-		posY=0;
+		posX=5;
+		posY=5;
 	}
 	
 	/**
