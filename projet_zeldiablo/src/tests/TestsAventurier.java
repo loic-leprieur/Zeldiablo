@@ -28,7 +28,7 @@ public class TestsAventurier {
 	}
 	
 	/**
-	 * Test de la position de l'aventurier pour un déplacement vers la gauche
+	 * Test de la position de l'aventurier pour un deplacement vers la gauche
 	 */
 	@Test
 	public void TestDeplacementGauche(){
