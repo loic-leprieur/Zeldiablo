@@ -1,4 +1,4 @@
-package monJeu;
+
 import moteurJeu.MoteurGraphique;
 
 /**
