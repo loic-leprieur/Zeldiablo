@@ -1,7 +1,5 @@
 package monJeu;
 
-import java.util.Scanner;
-
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
@@ -41,29 +39,6 @@ public class MonJeu implements Jeu {
 	}
 		
 		
-		/**
-		 * Methode principale
-		 * 
-		 * @param args
-		 * 		Arguments lors de l'execution
-		 */
-		public static void main(String[] args) {
-			
-			//Creation du jeu
-			MonJeu j = new MonJeu();
-			
-			while(true) {
-			
-				
-			
-				//Demande au jeu de deplacer le heros
-				j.evoluer(dir);
-			}
-
-		}
-		
-		
-		
 		public String toString() {
 			return (heros.toString());
 		}
@@ -73,7 +48,7 @@ public class MonJeu implements Jeu {
 
 		@Override
 		public boolean etreFini() {
-			// TODO Auto-generated method stub
+			
 			return false;
 		}
 
