@@ -34,43 +34,10 @@ public class MonJeu implements Jeu {
 	 */
 	
 	
+
 	@Override
-	public void evoluer(Commande commandeUser) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void evoluer(String commande){
-		
-		
-		switch(commande){
-		
-		case "H":
-			
-			heros.seDeplacer(0,10);
-			break;
-		
-		case "B":
-			heros.seDeplacer(0,-10);
-			break;
-			
-		case "G":
-			heros.seDeplacer(-10,0);
-			break;
-			
-		case "D":
-			heros.seDeplacer(10,0);
-			break;
-			
-		case "exit":
-			System.exit(0);
-			
-		default:
-			System.out.println("Commande non reconnue !");
-			break;
-		
-		
-		}
+	public void evoluer(Commande c){
+		heros.deplacer(c);
 	}
 		
 		
@@ -86,9 +53,8 @@ public class MonJeu implements Jeu {
 			MonJeu j = new MonJeu();
 			
 			while(true) {
-				//Demande de commandes a executer a l'utilisateur
-				Scanner sc = new Scanner(System.in);
-				String dir = sc.nextLine();
+			
+				
 			
 				//Demande au jeu de deplacer le heros
 				j.evoluer(dir);
@@ -99,7 +65,7 @@ public class MonJeu implements Jeu {
 		
 		
 		public String toString() {
-			return (heros.getPosX()+", "+heros.getPosY());
+			return (heros.toString());
 		}
 
 		
