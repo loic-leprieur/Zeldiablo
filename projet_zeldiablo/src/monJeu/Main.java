@@ -1,6 +1,4 @@
-package application;
-import monJeu.DessinMonJeu;
-import monJeu.MonJeu;
+package monJeu;
 import moteurJeu.MoteurGraphique;
 
 /**
