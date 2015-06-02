@@ -1,12 +1,9 @@
 package tests;
 
 import static org.junit.Assert.*;
+import monJeu.Personnage;
 
 import org.junit.*;
-
-import application.Aventurier;
-
-import application.Aventurier;
 
 public class TestsAventurier {
 
@@ -17,7 +14,7 @@ public class TestsAventurier {
 	@Test
 	public void TestPositionInitiale(){
 		//Preparation des donnees
-		Aventurier zelda = new Aventurier();
+		Personnage zelda = new Personnage();
 		
 		//Methode testee
 		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==5);
@@ -33,7 +30,7 @@ public class TestsAventurier {
 	@Test
 	public void TestDeplacementGauche(){
 		//Preparation des donnees
-		Aventurier zelda = new Aventurier();
+		Personnage zelda = new Personnage();
 		
 		//Methode testee
 		zelda.seDeplacer(-2,0);
@@ -49,7 +46,7 @@ public class TestsAventurier {
 	@Test
 	public void TestDeplacementDroite(){
 		//Preparation des donnees
-		Aventurier zelda = new Aventurier();
+		Personnage zelda = new Personnage();
 		
 		//Methode testee
 		zelda.seDeplacer(2,0);
@@ -64,7 +61,7 @@ public class TestsAventurier {
 	@Test
 	public void TestDeplacementHaut(){
 		//Preparation des donnees
-		Aventurier zelda = new Aventurier();
+		Personnage zelda = new Personnage();
 		
 		//Methode testee
 		zelda.seDeplacer(0,-2);
@@ -79,7 +76,7 @@ public class TestsAventurier {
 	@Test
 	public void TestDeplacementBas(){
 		//Preparation des donnees
-		Aventurier zelda = new Aventurier();
+		Personnage zelda = new Personnage();
 		
 		//Methode testee
 		zelda.seDeplacer(0,2);

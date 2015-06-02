@@ -1,57 +1,54 @@
 package monJeu;
 
-import moteurJeu.Commande;
 
-/**
- * la classe correspondant au Personnage
- */
 public class Personnage {
-
+	// position en abscisse
+	private int posX;
+	// position en ordonnee
+	private int posY;
+	
 	/**
-	 * position en X et y
+	 * constructeur par defaut
+	 * initilialise la position
+	 * de l'aventurier
 	 */
-	public int x;
-	public int y;
-
-	/**
-	 * taille de l'environnement
-	 */
-	final static int LIMIT_X = 15;
-	final static int LIMIT_Y = 15;
-
-	/**
-	 * constructeur vide
-	 */
-	public Personnage() {
-		this.x = LIMIT_X / 2;
-		this.y = LIMIT_Y / 2;
+	public Personnage(){
+		posX=5;
+		posY=5;
 	}
-
+	
 	/**
-	 * deplacer le personnage dans une direction
-	 * 
-	 * @param m
-	 *            la chaine permettant de deplacer le personnage (N,S, E ou O)
+	 * translation du personnage
+	 * @param x
+	 * @param y
 	 */
-	public void deplacer(Commande c) {
-		
-		if (c.gauche)
-		{
-			this.x--;
-			if (this.x < 0)
-				this.x = 0;
-		}
-
-		if (c.droite)
-		{
-			this.x++;
-			if (this.x >LIMIT_X)
-				this.x = LIMIT_X;
-		}
+	public void seDeplacer(int x, int y){
+		posX+=x;
+		posY+=y;
 	}
-
+	
+	/**
+	 * affichage des infos
+	 * d'un aventurier
+	 */
+	@Override
 	public String toString() {
-		return ("(" + this.x+","+this.y+")");
+		return "Aventurier [posX=" + posX + ", posY=" + posY + "]";
 	}
 
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
 }

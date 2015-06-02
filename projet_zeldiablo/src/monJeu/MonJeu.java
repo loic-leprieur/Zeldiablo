@@ -1,58 +1,120 @@
 package monJeu;
 
+import java.util.Scanner;
+
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
-/**
- * classe qui contient les donnees du jeu. Pour le moment, il ne possede qu'un
- * personnage
- *
- */
 public class MonJeu implements Jeu {
 
+	
 	/**
-	 * le personnage du jeu
+	 * Attribut representant le heros du jeu
 	 */
-	private Personnage pj;
-
+	
+	Personnage heros;
+	
+	
 	/**
-	 * constructeur de jeu avec un Personnage
+	 * Constructeur sans parametres qui construit un nouveau heros
 	 */
-	public MonJeu() {
-		this.pj=new Personnage();
+	
+	public MonJeu(){
+			
+		this.heros = new Personnage();
+		
 	}
-
+	
+ 	
 	/**
-	 * surcharge toString
-	 */
-	public String toString() {
-		return ("" + this.getPj());
-	}
-
-	/**
-	 * demande a deplacer le personnage
+	 * Methode qui permet au heros de se deplacer
 	 * 
 	 * @param commande
-	 *            chaine qui donne ordre
+	 * 			Commande a executer
 	 */
-	public void evoluer(Commande commande) {
-		this.getPj().deplacer(commande);
-
-	}
-
+	
+	
 	@Override
-	public boolean etreFini() {
-		// le jeu n'est jamais fini
-		return false;
+	public void evoluer(Commande commandeUser) {
+		// TODO Auto-generated method stub
+		
 	}
-
-	/**
-	 * getter pour l'affichage
-	 * 
-	 * @return personnage du jeu
-	 */
-	public Personnage getPj() {
-		return pj;
+	
+	public void evoluer(String commande){
+		
+		
+		switch(commande){
+		
+		case "H":
+			
+			heros.seDeplacer(0,10);
+			break;
+		
+		case "B":
+			heros.seDeplacer(0,-10);
+			break;
+			
+		case "G":
+			heros.seDeplacer(-10,0);
+			break;
+			
+		case "D":
+			heros.seDeplacer(10,0);
+			break;
+			
+		case "exit":
+			System.exit(0);
+			
+		default:
+			System.out.println("Commande non reconnue !");
+			break;
+		
+		
+		}
 	}
+		
+		
+		/**
+		 * Methode principale
+		 * 
+		 * @param args
+		 * 		Arguments lors de l'execution
+		 */
+		public static void main(String[] args) {
+			
+			//Creation du jeu
+			MonJeu j = new MonJeu();
+			
+			while(true) {
+				//Demande de commandes a executer a l'utilisateur
+				Scanner sc = new Scanner(System.in);
+				String dir = sc.nextLine();
+			
+				//Demande au jeu de deplacer le heros
+				j.evoluer(dir);
+			}
 
+		}
+		
+		
+		
+		public String toString() {
+			return (heros.getPosX()+", "+heros.getPosY());
+		}
+
+		
+
+
+		@Override
+		public boolean etreFini() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+
+	
+		
+		
+		
+		
 }
