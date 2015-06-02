@@ -1,4 +1,4 @@
-package monJeu;
+package monJeuExemple;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
