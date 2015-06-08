@@ -23,8 +23,20 @@ public class Personnage {
 	 * constructeur vide
 	 */
 	public Personnage() {
-		this.x = LIMIT_X / 2;
-		this.y = LIMIT_Y / 2;
+		
+		if(x%2 == 0) {
+			this.x = LIMIT_X / 2;
+		} else {
+			this.x = (LIMIT_X / 2) + 1;
+		}
+		
+		
+		if(y%2 == 0) {
+			this.y = LIMIT_Y / 2;
+		} else {
+			this.y = (LIMIT_Y / 2) + 1;
+		}
+		
 	}
 
 	/**
