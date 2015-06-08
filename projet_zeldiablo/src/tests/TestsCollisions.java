@@ -44,7 +44,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseNonFranchissable() {
 		//donnees
-		MonJeu jeu=new MonJeu();
+		MonJeu jeu=new MonJeu(11);
 		Personnage heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
