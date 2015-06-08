@@ -17,7 +17,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseFranchissable() {
 		//donnees
-		MonJeu jeu=new MonJeu();
+		MonJeu jeu=new MonJeu(11);
 		Personnage heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
@@ -27,6 +27,7 @@ public class TestsCollisions {
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(true);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
 		}
