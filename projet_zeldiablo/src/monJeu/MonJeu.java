@@ -17,8 +17,10 @@ public class MonJeu implements Jeu {
 	private Case[][] tab_cases;
 
 	/**
-	 * constructeur de jeu avec un Personnage
+	 * constructeur de jeu avec un Personnage et un labyrinthe comportant
+	 * uniquement des cases non traversables
 	 */
+	
 	public MonJeu() {
 		this.pj=new Personnage();		
 		tab_cases = new Case[10][10];
@@ -26,14 +28,12 @@ public class MonJeu implements Jeu {
 		
 		for(int i = 0; i < 10; i++){
 			
-			for(int j = 0; j < 10; i++){
+			for(int j = 0; j < 10; j++){
 				
 				tab_cases[i][j] = new Case(false);
 				
 			}
-			
-			
-			
+
 		}
 		
 	}
