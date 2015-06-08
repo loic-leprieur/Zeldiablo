@@ -1,12 +1,12 @@
 package tests;
 
 import static org.junit.Assert.*;
-import monJeu.Personnage;
+import monJeu.Heros;
 import moteurJeu.Commande;
 
 import org.junit.*;
 
-public class TestsPersonnage {
+public class TestsHeros {
 
 	/**
 	 * Test de la position initiale de l'aventurier 
@@ -15,7 +15,7 @@ public class TestsPersonnage {
 	@Test
 	public void TestPositionInitiale(){
 		//Preparation des donnees
-		Personnage zelda = new Personnage();
+		Heros zelda = new Heros();
 		
 		//Methode testee
 		boolean res = (zelda.x==5 && zelda.y==5);
@@ -32,7 +32,7 @@ public class TestsPersonnage {
 	public void TestDeplacementGauche(){
 		
 		//Preparation des donnees
-		Personnage zelda = new Personnage();
+		Heros zelda = new Heros();
 		Commande c = new Commande();
 		c.gauche = true;
 		
@@ -52,7 +52,7 @@ public class TestsPersonnage {
 	public void TestDeplacementDroite(){
 		
 		//Preparation des donnees
-		Personnage zelda = new Personnage();
+		Heros zelda = new Heros();
 		Commande c = new Commande();
 		c.droite = true;
 		
@@ -72,7 +72,7 @@ public class TestsPersonnage {
 	public void TestDeplacementHaut(){
 		
 		//Preparation des donnees
-		Personnage zelda = new Personnage();
+		Heros zelda = new Heros();
 		Commande c = new Commande();
 		c.haut = true;
 		
@@ -91,7 +91,7 @@ public class TestsPersonnage {
 	public void TestDeplacementBas(){
 		
 		//Preparation des donnees
-		Personnage zelda = new Personnage();
+		Heros zelda = new Heros();
 		Commande c = new Commande();
 		c.bas = true;
 		

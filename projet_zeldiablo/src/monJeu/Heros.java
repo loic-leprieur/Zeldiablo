@@ -5,7 +5,7 @@ import moteurJeu.Commande;
 /**
  * la classe correspondant au Personnage
  */
-public class Personnage {
+public class Heros {
 
 	/**
 	 * position en X et y
@@ -22,7 +22,7 @@ public class Personnage {
 	/**
 	 * constructeur vide
 	 */
-	public Personnage() {
+	public Heros() {
 		
 		if(LIMIT_X%2 == 0) {
 			this.x = LIMIT_X / 2;

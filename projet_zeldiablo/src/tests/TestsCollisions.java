@@ -3,7 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 import monJeu.Case;
 import monJeu.MonJeu;
-import monJeu.Personnage;
+import monJeu.Heros;
 import moteurJeu.Commande;
 
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseFranchissable() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 		
@@ -45,7 +45,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableDroite() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -71,7 +71,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableGauche() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -97,7 +97,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableBas() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -123,7 +123,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableHaut() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -149,7 +149,7 @@ public class TestsCollisions {
 	public void testDeplacerEnDiagonaleHorsDuJeu() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Personnage heros=jeu.getPj();
+		Heros heros=jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			

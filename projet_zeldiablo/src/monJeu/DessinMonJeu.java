@@ -61,7 +61,7 @@ public class DessinMonJeu implements DessinJeu {
 	public void dessiner(BufferedImage im) {
 		// no sait que c'est un jeuTest
 		MonJeu mJeu = (MonJeu) jeu;
-		Personnage pj = mJeu.getPj();
+		Heros pj = mJeu.getPj();
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 		
 		for (int i = 0; i < jeu.getCases().length; i++) {

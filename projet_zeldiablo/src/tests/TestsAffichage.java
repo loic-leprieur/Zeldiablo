@@ -2,7 +2,7 @@ package tests;
 
 import static org.junit.Assert.*;
 import monJeu.MonJeu;
-import monJeu.Personnage;
+import monJeu.Heros;
 import monJeu.Case;
 
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class TestsAffichage {
 		//Preparation des donnees
 		//Methode testee
 		MonJeu mj = new MonJeu(11);
-		Personnage p = mj.getPj();
+		Heros p = mj.getPj();
 		
 		//Validation des resultats
 		assertEquals("La position en abscisse du personnage devrait etre 5.", 5, p.x);
