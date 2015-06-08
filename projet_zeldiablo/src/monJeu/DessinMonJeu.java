@@ -50,6 +50,13 @@ public class DessinMonJeu implements DessinJeu {
 			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
 					TAILLE_CASE);
 			break;
+			
+		case "MONS":
+			crayon.setColor(Color.RED);
+			crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
+					TAILLE_CASE);
+			break;
+			
 		default:
 			throw new AssertionError("objet inexistant");
 		}
@@ -61,7 +68,9 @@ public class DessinMonJeu implements DessinJeu {
 	public void dessiner(BufferedImage im) {
 		// no sait que c'est un jeuTest
 		MonJeu mJeu = (MonJeu) jeu;
-		Heros pj = (Heros) mJeu.getPj();
+		Heros pj = (Heros) mJeu.getPj(0);
+		this.dessinerObjet("MONS", mJeu.getPj(1).x, mJeu.getPj(1).y, im);
+		
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 		
 		for (int i = 0; i < jeu.getCases().length; i++) {
