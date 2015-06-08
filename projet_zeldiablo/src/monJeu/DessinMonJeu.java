@@ -64,20 +64,20 @@ public class DessinMonJeu implements DessinJeu {
 		Personnage pj = mJeu.getPj();
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 		
-		for(int i = 0; i < jeu.getCases().length; i++){
-	
+		for (int i = 0; i < jeu.getCases().length; i++) {
 
-			
-			for(int j = 0; j < jeu.getCases().length; j++){
-				
-				if(!(jeu.getCases()[i][j].estFranchissable())){
-					
+			for (int j = 0; j < jeu.getCases().length; j++) {
+
+				if (!(jeu.getCases()[i][j].estFranchissable())) {
+
 					this.dessinerObjet("MUR", i, j, im);
-					
+
 				}
-				
+
 			}
-}
+		}
+		
+		jeu.getCases()[pj.x][pj.y].setFranchissable(true);
 	}
 
 }
