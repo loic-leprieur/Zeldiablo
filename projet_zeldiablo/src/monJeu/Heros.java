@@ -5,20 +5,8 @@ import moteurJeu.Commande;
 /**
  * la classe correspondant au Personnage
  */
-public class Heros {
-
-	/**
-	 * position en X et y
-	 */
-	public int x;
-	public int y;
-
-	/**
-	 * taille de l'environnement
-	 */
-	final static int LIMIT_X = 10;
-	final static int LIMIT_Y = 10;
-
+public class Heros extends Personnage{
+	
 	/**
 	 * constructeur vide
 	 */
