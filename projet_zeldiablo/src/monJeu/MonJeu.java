@@ -151,7 +151,7 @@ public class MonJeu implements Jeu {
 	 * @return personnage du jeu
 	 */
 	public Personnage getPj(int i) {
-		if(i>=pj.size())
+		if(i>=pj.size() || i<0)
 			return null;
 		else
 			return pj.get(i);
