@@ -20,9 +20,8 @@ public class MonJeu implements Jeu {
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu() {
-		this.pj=new Personnage();
-		
-		tab
+		this.pj=new Personnage();		
+		tab_cases = new Case[10][10];
 		
 	}
 
