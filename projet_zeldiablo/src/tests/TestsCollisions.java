@@ -60,7 +60,7 @@ public class TestsCollisions {
 		}
 			
 		//validation du test
-		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+		assertEquals("Le personnage ne s'est deplace sur une case a droite franchissable ",false, aFranchis);
 	}
 	
 	/**
@@ -76,9 +76,9 @@ public class TestsCollisions {
 		boolean aFranchis=false;
 			
 		//methode testee
-		Commande allerAdroite = new Commande();
-		allerAdroite.droite=true;
-		jeu.evoluer(allerAdroite);
+		Commande allerAgauche = new Commande();
+		allerAgauche.gauche=true;
+		jeu.evoluer(allerAgauche);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
@@ -86,7 +86,7 @@ public class TestsCollisions {
 		}
 			
 		//validation du test
-		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+		assertEquals("Le personnage ne s'est deplace sur une case a gauche franchissable ",false, aFranchis);
 	}
 	
 	/**
@@ -102,9 +102,9 @@ public class TestsCollisions {
 		boolean aFranchis=false;
 			
 		//methode testee
-		Commande allerAdroite = new Commande();
-		allerAdroite.droite=true;
-		jeu.evoluer(allerAdroite);
+		Commande allerAbas = new Commande();
+		allerAbas.bas=true;
+		jeu.evoluer(allerAbas);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
@@ -112,7 +112,7 @@ public class TestsCollisions {
 		}
 			
 		//validation du test
-		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+		assertEquals("Le personnage ne s'est deplace sur une case en bas franchissable ",false, aFranchis);
 	}
 	
 	/**
@@ -128,9 +128,9 @@ public class TestsCollisions {
 		boolean aFranchis=false;
 			
 		//methode testee
-		Commande allerAdroite = new Commande();
-		allerAdroite.droite=true;
-		jeu.evoluer(allerAdroite);
+		Commande allerAhaut = new Commande();
+		allerAhaut.haut=true;
+		jeu.evoluer(allerAhaut);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
@@ -138,7 +138,7 @@ public class TestsCollisions {
 		}
 			
 		//validation du test
-		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+		assertEquals("Le personnage ne s'est deplace sur une case en haut franchissable ",false, aFranchis);
 	}
 
 }
