@@ -16,7 +16,7 @@ public class Monstre extends Personnage {
 	@Override
 	public String toString() {
 		
-		return null;
+		return ("Monstre:x=" + x + ",y=" + y);
 	}
 	
 		

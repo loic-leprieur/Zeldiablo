@@ -30,7 +30,7 @@ public class Heros extends Personnage{
 
 
 	public String toString() {
-		return ("(" + this.x+","+this.y+")");
+		return return ("Heros:x=" + x + ",y=" + y);
 	}
 
 }
