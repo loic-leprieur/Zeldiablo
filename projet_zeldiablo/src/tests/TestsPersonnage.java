@@ -20,7 +20,7 @@ public class TestsPersonnage {
 		Personnage zelda = new Personnage();
 		
 		//Methode testee
-		boolean res = (zelda.x==7 && zelda.y==7);
+		boolean res = (zelda.x==5 && zelda.y==5);
 		
 		//Validation des resultats
 		assertEquals("Doit se trouver en position 5.5",true, res);
@@ -39,9 +39,9 @@ public class TestsPersonnage {
 		
 		//Methode testee
 		zelda.deplacer(c);
-		boolean res = (zelda.x==6 && zelda.y==7);
+		boolean res = (zelda.x==4 && zelda.y==5);
 		//Validation ds resultats
-		assertEquals("Personnage doit se trouve en position 3.5",true,res);
+		assertEquals("Personnage doit se trouve en position 4.5",true,res);
 	}
 	
 	
@@ -57,13 +57,13 @@ public class TestsPersonnage {
 		
 		//Methode testee
 		zelda.deplacer(c);
-		boolean res = (zelda.x==8 && zelda.y==7);
+		boolean res = (zelda.x==6 && zelda.y==5);
 		//Validation des resultats
-		assertEquals("Personnage doit se trouve en position 7.5",true,res);
+		assertEquals("Personnage doit se trouve en position 6.5",true,res);
 	}
 	
 	/**
-	 * Test de la position de l'Personnage pour un deplacement vers le haut
+	 * Test de la position du Personnage pour un deplacement vers le haut
 	 */
 	@Test
 	public void TestDeplacementHaut(){
@@ -74,9 +74,9 @@ public class TestsPersonnage {
 		
 		//Methode testee
 		zelda.deplacer(c);
-		boolean res = (zelda.x==7 && zelda.y==6);
+		boolean res = (zelda.x==5 && zelda.y==4);
 		//Validation des resultats
-		assertEquals("Personnage doit se trouve en position 5.3",true,res);
+		assertEquals("Personnage doit se trouve en position 5.4",true,res);
 	}
 	
 	/**
@@ -91,9 +91,9 @@ public class TestsPersonnage {
 		
 		//Methode testee
 		zelda.deplacer(c);
-		boolean res = (zelda.x==7 && zelda.y==8);
+		boolean res = (zelda.x==5 && zelda.y==6);
 		//Validation des resultats
-		assertEquals("Personnage doit se trouve en position 5.7",true,res);
+		assertEquals("Personnage doit se trouve en position 5.6",true,res);
 	}
 	
 	
