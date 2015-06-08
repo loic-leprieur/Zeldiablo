@@ -5,7 +5,7 @@ import moteurJeu.Commande;
 public class Monstre extends Personnage {
 
 	
-	public void Monstre(){
+	public Monstre(){
 		
 		this.x = 1;
 		this.y = 1;
