@@ -14,14 +14,8 @@ public class Monstre extends Personnage {
 	}
 
 	@Override
-	public void deplacer(Commande commande) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	
