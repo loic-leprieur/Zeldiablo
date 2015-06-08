@@ -12,6 +12,10 @@ public class Case {
 	
 	/**
 	 * Constructeur par defaut qui initialise une case non franchissable
+	 * 
+	 * @param
+	 * 
+	 * 		Booleen qui indique si la case est franchissable ou non
 	 */
 	
 	
@@ -58,6 +62,10 @@ public class Case {
 	
 	/**
 	 * Methode qui permet de renvoyer le type d'une case
+	 * 
+	 * @return
+	 * 
+	 * 			Retourne une chaine decrivant une case (type)
 	 */
 	
 	public String toString(){
