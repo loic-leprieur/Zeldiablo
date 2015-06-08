@@ -33,13 +33,13 @@ public class MonJeu implements Jeu {
 			
 			for(int j = 0; j < taille; j++){
 				
-				if((i == 0) || (i == tab_cases.length-1) || (j == 0) || (j == tab_cases[i].length-1)) {
+				if(((i%2 == 0) && ((j%2 == 0) && (j != 4) && (j != 6))) ||  (i == 0) || (i == tab_cases.length-1) || (j == 0) || (j == tab_cases[i].length-1)) {
 				
 					tab_cases[i][j] = new Case(false);
 				
 				} else {
 				
-					tab_cases[i][j] = new Case(new Random().nextBoolean());
+					tab_cases[i][j] = new Case(true);
 					
 				}
 					
