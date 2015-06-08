@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.*;
+import monJeu.Case;
 import monJeu.MonJeu;
 import monJeu.Personnage;
 import moteurJeu.Commande;
@@ -18,16 +19,20 @@ public class TestsCollisions {
 		//donnees
 		MonJeu jeu=new MonJeu();
 		Personnage heros=jeu.getPj();
-		Case[][] tab_cases=jeu.tab_cases; //[x]ligne [y]colonne
+		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
+		boolean aFranchis=false;
 		
 		//methode testee
 		Commande allerAdroite = new Commande();
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
+		if(caseArrivee.estFranchissable()){
+			aFranchis=true;
+		}
 		
 		//validation du test
-		assertEquals("Le personnage s'est deplace sur une case franchissable ",true, heros.x==caseArrivee.x);
+		assertEquals("Le personnage s'est deplace sur une case franchissable ",true, aFranchis);
 	}
 
 }
