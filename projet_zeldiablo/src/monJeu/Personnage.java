@@ -16,8 +16,8 @@ public class Personnage {
 	/**
 	 * taille de l'environnement
 	 */
-	final static int LIMIT_X = 9;
-	final static int LIMIT_Y = 9;
+	final static int LIMIT_X = 10;
+	final static int LIMIT_Y = 10;
 
 	/**
 	 * constructeur vide
