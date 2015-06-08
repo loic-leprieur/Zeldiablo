@@ -9,12 +9,6 @@ public abstract class Personnage {
 	public int y;
 
 	/**
-	 * taille de l'environnement
-	 */
-	final static int LIMIT_X = MonJeu.TAILLE_PLATEAU - 1;
-	final static int LIMIT_Y = MonJeu.TAILLE_PLATEAU - 1;
-
-	/**
 	 * deplacer le personnage dans une direction
 	 * 
 	 * @param m
@@ -33,8 +27,8 @@ public abstract class Personnage {
 		if (c.droite)
 		{
 			this.x++;
-			if (this.x >LIMIT_X)
-				this.x = LIMIT_X;
+			if (this.x >MonJeu.TAILLE_PLATEAU - 1)
+				this.x = MonJeu.TAILLE_PLATEAU - 1;
 		}
 		
 		if(c.haut)
@@ -48,9 +42,9 @@ public abstract class Personnage {
 		if(c.bas)
 		{
 			this.y++;
-			if (this.y > LIMIT_Y)
+			if (this.y > MonJeu.TAILLE_PLATEAU - 1)
 			{
-				this.y = LIMIT_Y;				
+				this.y = MonJeu.TAILLE_PLATEAU - 1;				
 			}
 		}
 	}

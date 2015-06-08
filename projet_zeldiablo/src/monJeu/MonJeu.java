@@ -78,42 +78,64 @@ public class MonJeu implements Jeu {
 		for(int i=0;i<pj.size();i++){
 			int posX = pj.get(i).x;
 			int posY = pj.get(i).y;
+			//pour le choix aleatoire de direction
+			int choix;
+			//pour la commande a effectuer selon si heros ou monstre
 			Commande commande;	
-			if(pj.get(i)==Heros.class){
-				//TODO
+			if(pj.get(i)instanceof Heros){
+				commande=cde;
+			}else{
+				commande = new Commande();
+				choix = pj.get(i).choixAleatoire();
+				switch(choix){
+				case 0:
+					commande.haut=true;
+					break;
+				case 1:
+					commande.bas=true;
+					break;
+				case 2:
+					commande.gauche=true;
+					break;
+				case 3:
+					commande.droite=true;
+					break;
+				default:
+					
+				}
 			}
 			//verifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
 			if(commande.haut){
 				if(tab_cases[posX][posY-1].estFranchissable()){
-					this.getPj().deplacer(commande);
+					this.getPj(i).deplacer(commande);
 
 				}
 			}
 			if(commande.bas){
 				if(tab_cases[posX][posY+1].estFranchissable()){
-					this.getPj().deplacer(commande);
+					this.getPj(i).deplacer(commande);
 				}
 			}
 			if(commande.gauche){
 				if(tab_cases[posX-1][posY].estFranchissable()){
-					this.getPj().deplacer(commande);
+					this.getPj(i).deplacer(commande);
 
 				}
 			}
 			if(commande.droite){
 				if(tab_cases[posX+1][posY].estFranchissable()){
-					this.getPj().deplacer(commande);
+					this.getPj(i).deplacer(commande);
 
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
-			if(pj.x==0 || pj.x==tab_cases.length-1)
-				pj.x=posX;
-			if(pj.y==0 || pj.y==tab_cases.length-1)
-				pj.y=posY;
-			if(!(tab_cases[pj.x][pj.y].estFranchissable())){
-				pj.x=posX;
-				pj.y=posY;
+			if(pj.get(i).x==0 || pj.get(i).x==tab_cases.length-1)
+				pj.get(i).x=posX;
+			if(pj.get(i).y==0 || pj.get(i).y==tab_cases.length-1)
+				pj.get(i).y=posY;
+			if(!(tab_cases[pj.get(i).x][pj.get(i).y].estFranchissable())){
+				pj.get(i).x=posX;
+				pj.get(i).y=posY;
 			}
 		}
 	}
@@ -128,8 +150,8 @@ public class MonJeu implements Jeu {
 	 * 
 	 * @return personnage du jeu
 	 */
-	public Personnage getPj() {
-		return pj;
+	public Personnage getPj(int i) {
+		return pj.get(i);
 	}
 
 	public Case[][] getCases(){
