@@ -16,7 +16,7 @@ Fonctionnalites realisees dans cette version 4 :
         
         - 2.2 Déplacement aléatoire des monstres :
         
-                Criteres de validation testes dans la classe TestsCollisions :
+                Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
                 
                         + A chaque évolution du jeu, que le joueur se déplace ou non, les monstres se déplacent
                         + Les monstres sont bloqués par les obstacles. S'ils ont choisi de se diriger vers un obstacle (mur, joueur...),
