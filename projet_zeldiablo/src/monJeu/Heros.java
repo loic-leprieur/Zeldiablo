@@ -12,17 +12,13 @@ public class Heros extends Personnage{
 	 */
 	public Heros() {
 		
+		
 		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
-			this.x = MonJeu.TAILLE_PLATEAU - 1 / 2;
+			this.x = (MonJeu.TAILLE_PLATEAU - 1) / 2;
+			this.y = (MonJeu.TAILLE_PLATEAU - 1) / 2;
 		} else {
-			this.x = (MonJeu.TAILLE_PLATEAU - 1 / 2) + 1;
-		}
-		
-		
-		if(MonJeu.TAILLE_PLATEAU - 1%2 == 0) {
-			this.y = MonJeu.TAILLE_PLATEAU - 1 / 2;
-		} else {
-			this.y = (MonJeu.TAILLE_PLATEAU - 1 / 2) + 1;
+			this.x = ((MonJeu.TAILLE_PLATEAU - 1 )/ 2) + 1;
+			this.y = ((MonJeu.TAILLE_PLATEAU - 1) / 2) + 1;
 		}
 		
 	}
