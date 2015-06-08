@@ -11,12 +11,12 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 
 		// creation du jeu particulier et de son afficheur
-		MonJeu jeu = new MonJeu();
+		MonJeu jeu = new MonJeu(11);
 		DessinMonJeu aff = new DessinMonJeu(jeu);
 
 		// classe qui lance le moteur de jeu generique
 		MoteurGraphique moteur = new MoteurGraphique(jeu, aff);
-		moteur.lancerJeu(250,250);
+		moteur.lancerJeu(275,275);
 	}
 
 }
