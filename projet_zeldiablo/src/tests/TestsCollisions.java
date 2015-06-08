@@ -142,11 +142,11 @@ public class TestsCollisions {
 	}
 	
 	/**
-	 * si personnage se deplace en abscisse
-	 * et que la case d'arrivee n'est pas franchissable
+	 * si personnage se deplace en haut et a gauche
+	 * et que la case d'arrivee est un bord (case infranchissable)
 	 */
 	@Test
-	public void testDeplacerEnDiagonale() {
+	public void testDeplacerEnDiagonaleHorsDuJeu() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
 		Personnage heros=jeu.getPj();
@@ -157,7 +157,9 @@ public class TestsCollisions {
 		Commande allerAhaut = new Commande();
 		allerAhaut.haut=true;
 		Commande allerAgauche = new Commande();
-		allerAhaut.haut=true;
+		allerAgauche.gauche=true;
+		jeu.getPj().x=2;
+		jeu.getPj().y=1;
 		jeu.evoluer(allerAhaut);
 		jeu.evoluer(allerAgauche);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
