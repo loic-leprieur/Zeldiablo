@@ -34,11 +34,11 @@ public class TestsAventurier {
 		Personnage zelda = new Personnage();
 		Commande c = new Commande();
 		c.gauche = true;
-		
 		//Methode testee
 		zelda.deplacer(c);
 		boolean res = (zelda.x==6 && zelda.y==7);
 		//Validation ds resultats
+
 		assertEquals("Aventurier doit se trouve en position 6.7",true,res);
 	}
 	
