@@ -51,6 +51,9 @@ public class TestsDeplacementAleatoireMonstre {
 		MonJeu mj = new MonJeu(11);
 		Monstre m = mj.getPj(1);
 		Commande c = new Commande();
+		
+		//VERIFIER LE TEST LORSQUE LE MONSTRE POURRA FRAPPER PAR EXEMPLE
+		
 		/*c.frapper = true;*/
 		int posXInit = m.x;
 		int posYInit = m.y;
