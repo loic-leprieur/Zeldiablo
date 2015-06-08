@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import monJeu.Case;
 import monJeu.MonJeu;
 import monJeu.Monstre;
+import monJeu.Personnage;
 import moteurJeu.Commande;
 
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Monstre m = mj.getPj(1);
+		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
 		int posXInit = m.x;
@@ -50,7 +51,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Monstre m = mj.getPj(1);
+		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		
 		//VERIFIER LE TEST LORSQUE LE MONSTRE POURRA FRAPPER PAR EXEMPLE
@@ -79,7 +80,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Monstre m = mj.getPj(1);
+		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
 		boolean dansLabyrinthe = true;
@@ -110,7 +111,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Monstre m = mj.getPj(2);
+		Monstre m = (Monstre) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
 		boolean dansLabyrinthe = true;
@@ -155,7 +156,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Monstre m = mj.getPj(1);
+		Monstre m = (Monstre) mj.getPj(1);
 		Personnage p = mj.getPj(0);
 		Commande c = new Commande();
 		c.haut = true;
@@ -174,6 +175,41 @@ public class TestsDeplacementAleatoireMonstre {
 			assertTrue("Le monstre et le heros ne devraient pas se trouver sur la meme case.", !memePosition);
 			
 		}
+		
+	}
+	
+	
+	@Test
+	/**
+	 * Methode de test permettant de tester que tous les monstres
+	 * se deplacent a chaque evolution
+	 */
+	public void test_Monstres_DeplacementsTousEvolution() {
+		
+		//Preparation des donnees
+		MonJeu mj = new MonJeu(11);
+		Monstre m1 = (Monstre) mj.getPj(1);
+		Monstre m2 = (Monstre) mj.getPj(2);
+		Commande c = new Commande();
+		c.haut = true;
+		
+		int posXInitM1 = m1.x;
+		int posYInitM1 = m1.y;
+		
+		int posXInitM2 = m2.x;
+		int posYInitM2 = m2.y;
+		
+		boolean deplacementM1 = false;
+		boolean deplacementM2 = false;
+		
+		//Methode testee
+		mj.evoluer(c);
+		
+		deplacementM1 = ((m1.x != posXInitM1) || (m1.y != posYInitM1));
+		
+		//Validation des resultats
+		assertTrue("Le monstre 1 devrait avoir change de position", deplacementM1);
+		assertTrue("Le monstre 2 devrait avoir change de position", deplacementM2);
 		
 	}
 	
