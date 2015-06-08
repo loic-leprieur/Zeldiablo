@@ -1,0 +1,19 @@
+Fonctionnalites realisees dans cette version 3 :
+
+
+
+        - 1.1 Creation d'un labyrinthe par defaut :
+        
+                Criteres de validation testes dans la classe TestsAffichage :
+                        
+                        + Le labyrinthe par defaut est constitue d'une arene de 10*10
+                        + Le personnage est place au centre de l'arene
+                        
+-----------------------------------------------------------------------------------------------------------------------------------------
+        
+        - 1.2 Collision avec les murs :
+        
+                Criteres de validation testes dans la classe TestsCollisions :
+                
+                        + La collision fonctionne dans les 4 directions
+                        + Si la case est vide, le personnage avance
