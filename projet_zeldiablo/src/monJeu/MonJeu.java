@@ -14,12 +14,28 @@ public class MonJeu implements Jeu {
 	 * le personnage du jeu
 	 */
 	private Personnage pj;
+	private Case[][] tab_cases;
 
 	/**
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu() {
-		this.pj=new Personnage();
+		this.pj=new Personnage();		
+		tab_cases = new Case[10][10];
+		
+		
+		for(int i = 0; i < 10; i++){
+			
+			for(int j = 0; j < 10; i++){
+				
+				tab_cases[i][j] = new Case(false);
+				
+			}
+			
+			
+			
+		}
+		
 	}
 
 	/**
@@ -55,4 +71,11 @@ public class MonJeu implements Jeu {
 		return pj;
 	}
 
+	public Case[][] getCases(){
+		
+		return this.tab_cases;
+		
+	}
+	
+	
 }
