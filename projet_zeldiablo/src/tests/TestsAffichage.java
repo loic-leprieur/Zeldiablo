@@ -61,5 +61,22 @@ public class TestsAffichage {
 		}
 		
 	}
+	
+	
+	@Test
+	/**
+	 * Methode de test permettant de tester le nombre de cases 
+	 * en largeur et en hauteur (taille 10*10)
+	 */
+	public void test_MonJeu_Taille() {
+		
+		//Preparation des donnees
+		//Methode testee
+		MonJeu mj = new MonJeu(11);
+		
+		//Validation des resultats
+		assertEquals("La largeur du labyrinthe devrait etre 10.", 10, mj.getCases().length-1);
+		
+	}
 
 }
