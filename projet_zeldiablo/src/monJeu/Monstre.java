@@ -12,6 +12,9 @@ public class Monstre extends Personnage {
 		
 		
 	}
+	
+	
+	
 
 	@Override
 	public String toString() {

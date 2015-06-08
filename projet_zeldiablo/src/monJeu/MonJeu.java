@@ -67,6 +67,7 @@ public class MonJeu implements Jeu {
 	 *            chaine qui donne ordre
 	 */
 	public void evoluer(Commande commande) {
+		
 		//on prend les coordonnees actuelles du personnage
 		int posX = pj.x;
 		int posY = pj.y;
