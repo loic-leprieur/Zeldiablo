@@ -1,5 +1,7 @@
 package monJeu;
 
+import java.util.Random;
+
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
@@ -37,7 +39,7 @@ public class MonJeu implements Jeu {
 				
 				} else {
 				
-					tab_cases[i][j] = new Case(true);
+					tab_cases[i][j] = new Case(new Random().nextBoolean());
 					
 				}
 					
