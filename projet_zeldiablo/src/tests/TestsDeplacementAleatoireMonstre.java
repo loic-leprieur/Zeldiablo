@@ -24,7 +24,7 @@ public class TestsDeplacementAleatoireMonstre {
 	public void test_Monstre_DeplacementJoueur() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
@@ -50,7 +50,7 @@ public class TestsDeplacementAleatoireMonstre {
 	public void test_Monstre_NonDeplacementJoueur() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		
@@ -79,7 +79,7 @@ public class TestsDeplacementAleatoireMonstre {
 	public void test_Monstre_Fantome_ZoneLabyrinthe() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
@@ -110,7 +110,7 @@ public class TestsDeplacementAleatoireMonstre {
 	public void test_Monstre_Orc_BloqueObstacles() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
@@ -155,7 +155,7 @@ public class TestsDeplacementAleatoireMonstre {
 	public void test_Monstre_PasMemePositionQueHeros() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(1);
 		Personnage p = mj.getPj(0);
 		Commande c = new Commande();
@@ -181,13 +181,45 @@ public class TestsDeplacementAleatoireMonstre {
 	
 	@Test
 	/**
+	 * Methode de test permettant de tester qu'un monstre et un autre monstre
+	 * ne peuvent pas se trouver sur une meme case dans le labyrinthe
+	 */
+	public void test_Monstre_PasMemePositionQueAutreMonstre() {
+		
+		//Preparation des donnees
+		MonJeu mj = new MonJeu(31);
+		Monstre m1 = (Monstre) mj.getPj(1);
+		Monstre m2 = (Monstre) mj.getPj(2);
+		Commande c = new Commande();
+		c.haut = true;
+		boolean memePosition = false;
+		
+		for(int i=0; i < 500; i++) {
+			
+			//Methode testee
+			mj.evoluer(c);
+			
+			if((m1.x == m2.x) && (m1.y == m2.y)) {
+				memePosition = true;
+			}
+			
+			//Validation des resultats
+			assertTrue("Le monstre et l'autre monstre ne devraient pas se trouver sur la meme case.", !memePosition);
+			
+		}
+		
+	}
+	
+	
+	@Test
+	/**
 	 * Methode de test permettant de tester que tous les monstres
 	 * se deplacent a chaque evolution
 	 */
 	public void test_Monstres_DeplacementsTousEvolution() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(31);
 		Monstre m1 = (Monstre) mj.getPj(1);
 		Monstre m2 = (Monstre) mj.getPj(2);
 		Commande c = new Commande();
@@ -206,6 +238,7 @@ public class TestsDeplacementAleatoireMonstre {
 		mj.evoluer(c);
 		
 		deplacementM1 = ((m1.x != posXInitM1) || (m1.y != posYInitM1));
+		deplacementM2 = ((m2.x != posXInitM2) || (m2.y != posYInitM2));
 		
 		//Validation des resultats
 		assertTrue("Le monstre 1 devrait avoir change de position", deplacementM1);
