@@ -69,7 +69,18 @@ public class DessinMonJeu implements DessinJeu {
 		// no sait que c'est un jeuTest
 		MonJeu mJeu = (MonJeu) jeu;
 		Heros pj = (Heros) mJeu.getPj(0);
-		this.dessinerObjet("MONS", mJeu.getPj(1).x, mJeu.getPj(1).y, im);
+		
+		int k = 1;
+		Monstre mons = (Monstre) mJeu.getPj(k);
+	
+		
+		while(mons != null){
+			k++;
+			this.dessinerObjet("MONS", mons.x, mons.y, im);
+			mons = (Monstre) mJeu.getPj(k);
+		}
+		
+		
 		
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 		

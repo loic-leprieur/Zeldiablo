@@ -7,8 +7,8 @@ public class Monstre extends Personnage {
 	
 	public Monstre(){
 		
-		this.x = 1;
-		this.y = 1;
+		this.x = 3;
+		this.y = 3;
 	
 		
 	}
