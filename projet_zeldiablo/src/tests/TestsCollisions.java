@@ -42,7 +42,7 @@ public class TestsCollisions {
 	 * et que la case d'arrivee n'est pas franchissable
 	 */
 	@Test
-	public void testDeplacerVersCaseNonFranchissable() {
+	public void testDeplacerVersCaseNonFranchissableDroite() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
 		Personnage heros=jeu.getPj();
@@ -61,6 +61,84 @@ public class TestsCollisions {
 			
 		//validation du test
 		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+	}
+	
+	/**
+	 * si personnage se deplace en abscisse
+	 * et que la case d'arrivee n'est pas franchissable
+	 */
+	@Test
+	public void testDeplacerVersCaseNonFranchissableGauche() {
+		//donnees
+		MonJeu jeu=new MonJeu(11);
+		Personnage heros=jeu.getPj();
+		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
+		boolean aFranchis=false;
+			
+		//methode testee
+		Commande allerAdroite = new Commande();
+		allerAdroite.droite=true;
+		jeu.evoluer(allerAdroite);
+		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(false);
+		if(caseArrivee.estFranchissable()){
+			aFranchis=true;
 		}
+			
+		//validation du test
+		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+	}
+	
+	/**
+	 * si personnage se deplace en abscisse
+	 * et que la case d'arrivee n'est pas franchissable
+	 */
+	@Test
+	public void testDeplacerVersCaseNonFranchissableBas() {
+		//donnees
+		MonJeu jeu=new MonJeu(11);
+		Personnage heros=jeu.getPj();
+		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
+		boolean aFranchis=false;
+			
+		//methode testee
+		Commande allerAdroite = new Commande();
+		allerAdroite.droite=true;
+		jeu.evoluer(allerAdroite);
+		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(false);
+		if(caseArrivee.estFranchissable()){
+			aFranchis=true;
+		}
+			
+		//validation du test
+		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+	}
+	
+	/**
+	 * si personnage se deplace en abscisse
+	 * et que la case d'arrivee n'est pas franchissable
+	 */
+	@Test
+	public void testDeplacerVersCaseNonFranchissableHaut() {
+		//donnees
+		MonJeu jeu=new MonJeu(11);
+		Personnage heros=jeu.getPj();
+		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
+		boolean aFranchis=false;
+			
+		//methode testee
+		Commande allerAdroite = new Commande();
+		allerAdroite.droite=true;
+		jeu.evoluer(allerAdroite);
+		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(false);
+		if(caseArrivee.estFranchissable()){
+			aFranchis=true;
+		}
+			
+		//validation du test
+		assertEquals("Le personnage ne s'est deplace sur une case franchissable ",false, aFranchis);
+	}
 
 }
