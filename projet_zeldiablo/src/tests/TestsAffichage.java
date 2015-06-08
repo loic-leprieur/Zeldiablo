@@ -24,7 +24,7 @@ public class TestsAffichage {
 		//Preparation des donnees
 		//Methode testee
 		MonJeu mj = new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Heros p = (Heros) mj.getPj();
+		Heros p = (Heros) mj.getPj(0);
 		
 		//Validation des resultats
 		assertEquals("La position en abscisse du personnage devrait etre 1.", 1, p.x);
