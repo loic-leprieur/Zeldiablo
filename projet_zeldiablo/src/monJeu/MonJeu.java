@@ -15,20 +15,21 @@ public class MonJeu implements Jeu {
 	 */
 	private Personnage pj;
 	private Case[][] tab_cases;
+	
 
 	/**
 	 * constructeur de jeu avec un Personnage et un labyrinthe comportant
 	 * uniquement des cases non traversables
 	 */
 	
-	public MonJeu() {
+	public MonJeu(int taille) {
 		this.pj=new Personnage();		
-		tab_cases = new Case[10][10];
+		tab_cases = new Case[taille][taille];
 		
 		
-		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < taille; i++){
 			
-			for(int j = 0; j < 10; j++){
+			for(int j = 0; j < taille; j++){
 				
 				tab_cases[i][j] = new Case(false);
 				
@@ -56,7 +57,7 @@ public class MonJeu implements Jeu {
 		int posX = pj.x;
 		int posY = pj.y;
 				
-		//vérifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
+		//vï¿½rifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
 		if(commande.haut){
 			if(tab_cases[posX][posY-1].estFranchissable()){
 				this.getPj().deplacer(commande);

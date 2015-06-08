@@ -23,7 +23,7 @@ public class TestsAffichage {
 		
 		//Preparation des donnees
 		//Methode testee
-		MonJeu mj = new MonJeu();
+		MonJeu mj = new MonJeu(11);
 		Personnage p = mj.getPj();
 		
 		//Validation des resultats
@@ -41,7 +41,7 @@ public class TestsAffichage {
 	public void test_MonJeu_Murs() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu();
+		MonJeu mj = new MonJeu(11);
 		Case[][] cases = new Case[10][10];
 		
 		//Methode testee
