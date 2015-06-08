@@ -48,6 +48,14 @@ public abstract class Personnage {
 			}
 		}
 	}
+	
+	
+	public int choixAleatoire(){
+		
+		return (int) (Math.random()*4);
+		
+	}
+	
 	public abstract String toString();
 	
 }

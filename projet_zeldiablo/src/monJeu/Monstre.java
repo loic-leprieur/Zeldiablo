@@ -22,12 +22,7 @@ public class Monstre extends Personnage {
 		return ("Monstre:x=" + x + ",y=" + y);
 	}
 	
-	
-	public int choixAleatoire(){
-		
-		return (int) (Math.random()*3);
-		
-	}
+
 		
 
 }
