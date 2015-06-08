@@ -140,5 +140,34 @@ public class TestsCollisions {
 		//validation du test
 		assertEquals("Le personnage ne s'est deplace sur une case en haut franchissable ",false, aFranchis);
 	}
+	
+	/**
+	 * si personnage se deplace en abscisse
+	 * et que la case d'arrivee n'est pas franchissable
+	 */
+	@Test
+	public void testDeplacerEnDiagonale() {
+		//donnees
+		MonJeu jeu=new MonJeu(11);
+		Personnage heros=jeu.getPj();
+		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
+		boolean aFranchis=false;
+			
+		//methode testee
+		Commande allerAhaut = new Commande();
+		allerAhaut.haut=true;
+		Commande allerAgauche = new Commande();
+		allerAhaut.haut=true;
+		jeu.evoluer(allerAhaut);
+		jeu.evoluer(allerAgauche);
+		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(false);
+		if(caseArrivee.estFranchissable()){
+			aFranchis=true;
+		}
+			
+		//validation du test
+		assertEquals("Le personnage ne s'est deplace sur une case en haut franchissable ",false, aFranchis);
+	}
 
 }
