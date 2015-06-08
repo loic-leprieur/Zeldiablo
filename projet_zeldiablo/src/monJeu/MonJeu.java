@@ -58,4 +58,11 @@ public class MonJeu implements Jeu {
 		return pj;
 	}
 
+	public Case[][] getCases(){
+		
+		return this.tab_cases;
+		
+	}
+	
+	
 }
