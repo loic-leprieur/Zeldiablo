@@ -60,12 +60,13 @@ public class Personnage {
 		if(c.bas)
 		{
 			this.y++;
-			if (this.y > LIMIT_Y){
+			if (this.y > LIMIT_Y)
+			{
 				this.y = LIMIT_Y;				
 			}
 		}
 	}
-	
+
 	public String toString() {
 		return ("(" + this.x+","+this.y+")");
 	}

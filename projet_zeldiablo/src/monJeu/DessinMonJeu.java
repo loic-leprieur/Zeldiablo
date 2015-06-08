@@ -1,14 +1,18 @@
 package monJeu;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import monJeuExemple.MonJeu;
-import monJeuExemple.Personnage;
 import moteurJeu.DessinJeu;
 
+/**
+ * un afficheur graphique associe au JeuTest fourni
+ * 
+ * @author vthomas
+ */
+public class DessinMonJeu implements DessinJeu {
 
-public class DessinMonjeu implements DessinJeu {
 	/**
 	 * constante pour gerer la taille des cases
 	 */
@@ -19,14 +23,13 @@ public class DessinMonjeu implements DessinJeu {
 	 */
 	private MonJeu jeu;
 
-		
 	/**
 	 * appelle constructeur parent
 	 * 
 	 * @param j
 	 *            le jeutest a afficher
 	 */
-	public DessinMonjeu(MonJeu j) {
+	public DessinMonJeu(MonJeu j) {
 		this.jeu = j;
 	}
 
@@ -51,18 +54,15 @@ public class DessinMonjeu implements DessinJeu {
 			throw new AssertionError("objet inexistant");
 		}
 	}
-	
-	public void DessinMonJeu(MonJeu j) {
-		this.jeu = j;
-	}
-	
-	@Override
-	public void dessiner(BufferedImage image) {
+
+	/**
+	 * methode dessiner redefinie de Afficheur retourne une image du jeu
+	 */
+	public void dessiner(BufferedImage im) {
 		// no sait que c'est un jeuTest
 		MonJeu j = (MonJeu) jeu;
 		Personnage pj = j.getPj();
-		this.dessinerObjet("PJ", pj.x, pj.y, image);
-		
+		this.dessinerObjet("PJ", pj.x, pj.y, im);
 	}
 
 }

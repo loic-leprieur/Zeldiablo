@@ -3,59 +3,56 @@ package monJeu;
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
+/**
+ * classe qui contient les donnees du jeu. Pour le moment, il ne possede qu'un
+ * personnage
+ *
+ */
 public class MonJeu implements Jeu {
 
-	
 	/**
-	 * Attribut representant le heros du jeu
+	 * le personnage du jeu
 	 */
-	
-	Personnage heros;
-	
-	
+	private Personnage pj;
+
 	/**
-	 * Constructeur sans parametres qui construit un nouveau heros
+	 * constructeur de jeu avec un Personnage
 	 */
-	
-	public MonJeu(){
-			
-		this.heros = new Personnage();
-		
+	public MonJeu() {
+		this.pj=new Personnage();
 	}
-	
- 	
+
 	/**
-	 * Methode qui permet au heros de se deplacer
+	 * surcharge toString
+	 */
+	public String toString() {
+		return ("" + this.getPj());
+	}
+
+	/**
+	 * demande a deplacer le personnage
 	 * 
 	 * @param commande
-	 * 			Commande a executer
+	 *            chaine qui donne ordre
 	 */
-	
-	
+	public void evoluer(Commande commande) {
+		this.getPj().deplacer(commande);
+
+	}
 
 	@Override
-	public void evoluer(Commande c){
-		heros.deplacer(c);
+	public boolean etreFini() {
+		// le jeu n'est jamais fini
+		return false;
 	}
-		
-		
-		public String toString() {
-			return (heros.toString());
-		}
 
-		
+	/**
+	 * getter pour l'affichage
+	 * 
+	 * @return personnage du jeu
+	 */
+	public Personnage getPj() {
+		return pj;
+	}
 
-
-		@Override
-		public boolean etreFini() {
-			
-			return false;
-		}
-
-
-	
-		
-		
-		
-		
 }
