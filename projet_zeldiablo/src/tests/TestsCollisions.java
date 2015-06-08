@@ -27,6 +27,7 @@ public class TestsCollisions {
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
 		Case caseArrivee=tab_cases[heros.x][heros.y];
+		caseArrivee.setFranchissable(true);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
 		}
