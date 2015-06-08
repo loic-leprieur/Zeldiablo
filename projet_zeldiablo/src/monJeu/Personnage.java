@@ -24,14 +24,14 @@ public class Personnage {
 	 */
 	public Personnage() {
 		
-		if(x%2 == 0) {
+		if(LIMIT_X%2 == 0) {
 			this.x = LIMIT_X / 2;
 		} else {
 			this.x = (LIMIT_X / 2) + 1;
 		}
 		
 		
-		if(y%2 == 0) {
+		if(LIMIT_Y%2 == 0) {
 			this.y = LIMIT_Y / 2;
 		} else {
 			this.y = (LIMIT_Y / 2) + 1;
