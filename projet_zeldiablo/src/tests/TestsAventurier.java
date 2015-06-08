@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.Assert.*;
 import monJeu.Personnage;
+import moteurJeu.Commande;
 
 import org.junit.*;
 
@@ -17,7 +18,7 @@ public class TestsAventurier {
 		Personnage zelda = new Personnage();
 		
 		//Methode testee
-		boolean res = (zelda.getPosX()==5 && zelda.getPosY()==5);
+		boolean res = (zelda.x==5 && zelda.y==5);
 		
 		//Validation des resultats
 		assertEquals("Doit se trouver en position 5.5",true, res);
@@ -31,12 +32,16 @@ public class TestsAventurier {
 	public void TestDeplacementGauche(){
 		//Preparation des donnees
 		Personnage zelda = new Personnage();
-		
+		int precX=zelda.x;
+		int precY=zelda.y;
 		//Methode testee
-		zelda.seDeplacer(-2,0);
-		boolean res = (zelda.getPosX()==3 && zelda.getPosY()==5);
+		Commande c = new Commande();
+		c.haut=true;
+		c.gauche=true;
+		zelda.deplacer(c);
+		boolean res = (zelda.x>=precX && zelda.y<=precY);
 		//Validation ds resultats
-		assertEquals("Aventurier doit se trouve en position 3.5",true,res);
+		assertEquals("Aventurier est a gauche en haut",true,res);
 	}
 	
 	
