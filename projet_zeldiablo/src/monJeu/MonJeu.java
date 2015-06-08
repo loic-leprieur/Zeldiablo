@@ -14,12 +14,16 @@ public class MonJeu implements Jeu {
 	 * le personnage du jeu
 	 */
 	private Personnage pj;
+	private Case[][] tab_cases;
 
 	/**
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu() {
 		this.pj=new Personnage();
+		
+		tab
+		
 	}
 
 	/**
