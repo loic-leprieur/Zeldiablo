@@ -15,7 +15,7 @@ public class MonJeu implements Jeu {
 	/**
 	 * le personnage du jeu
 	 */
-	private Heros pj;
+	private Personnage pj;
 	private Case[][] tab_cases;
 	
 
@@ -25,7 +25,7 @@ public class MonJeu implements Jeu {
 	 */
 	
 	public MonJeu(int taille) {
-		this.pj=new Heros();		
+		this.pj=new Personnage();		
 		tab_cases = new Case[taille][taille];
 		
 		
@@ -114,7 +114,7 @@ public class MonJeu implements Jeu {
 	 * 
 	 * @return personnage du jeu
 	 */
-	public Heros getPj() {
+	public Personnage getPj() {
 		return pj;
 	}
 
