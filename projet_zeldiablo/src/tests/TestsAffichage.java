@@ -23,12 +23,12 @@ public class TestsAffichage {
 		
 		//Preparation des donnees
 		//Methode testee
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(MonJeu.TAILLE_PLATEAU);
 		Heros p = (Heros) mj.getPj();
 		
 		//Validation des resultats
-		assertEquals("La position en abscisse du personnage devrait etre 5.", 5, p.x);
-		assertEquals("La position en ordonnee du personnage devrait etre 5.", 5, p.y);
+		assertEquals("La position en abscisse du personnage devrait etre 1.", 1, p.x);
+		assertEquals("La position en ordonnee du personnage devrait etre 1.", 1, p.y);
 		
 	}
 	
@@ -41,8 +41,8 @@ public class TestsAffichage {
 	public void test_MonJeu_Murs() {
 		
 		//Preparation des donnees
-		MonJeu mj = new MonJeu(11);
-		Case[][] cases = new Case[11][11];
+		MonJeu mj = new MonJeu(MonJeu.TAILLE_PLATEAU);
+		Case[][] cases = new Case[MonJeu.TAILLE_PLATEAU][MonJeu.TAILLE_PLATEAU];
 		
 		//Methode testee
 		cases = mj.getCases();
@@ -72,10 +72,10 @@ public class TestsAffichage {
 		
 		//Preparation des donnees
 		//Methode testee
-		MonJeu mj = new MonJeu(11);
+		MonJeu mj = new MonJeu(MonJeu.TAILLE_PLATEAU);
 		
 		//Validation des resultats
-		assertEquals("La largeur du labyrinthe devrait etre 10.", 10, mj.getCases().length-1);
+		assertEquals("La largeur du labyrinthe devrait etre de TAILLE_PLATEAU", MonJeu.TAILLE_PLATEAU, mj.getCases().length);
 		
 	}
 
