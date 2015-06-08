@@ -9,7 +9,7 @@ public class Monstre extends Personnage {
 		
 		this.x = 1;
 		this.y = 1;
-		
+	
 		
 	}
 	
