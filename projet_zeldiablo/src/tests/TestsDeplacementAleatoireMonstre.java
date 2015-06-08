@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.*;
+import monJeu.Case;
 import monJeu.MonJeu;
 import monJeu.Monstre;
 import moteurJeu.Commande;
@@ -74,7 +75,7 @@ public class TestsDeplacementAleatoireMonstre {
 	 * Methode de test permettant de tester qu'un fantome se deplace aleatoirement 
 	 * tout en restant dans la zone du labyrinthe
 	 */
-	public void test_Monstre_Fantome_BloqueObstacles() {
+	public void test_Monstre_Fantome_ZoneLabyrinthe() {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
@@ -94,6 +95,51 @@ public class TestsDeplacementAleatoireMonstre {
 			
 			//Validation des resultats
 			assertTrue("Le fantome devrait toujours se trouver dans la zone du labyrinthe (murs compris).", dansLabyrinthe);
+			
+		}
+		
+	}
+	
+	
+	@Test
+	/**
+	 * Methode de test permettant de tester qu'un orc se deplace aleatoirement 
+	 * tout en restant dans la zone du labyrinthe
+	 */
+	public void test_Monstre_Orc_BloqueObstacles() {
+		
+		//Preparation des donnees
+		MonJeu mj = new MonJeu(11);
+		Monstre m = mj.getPj(2);
+		Commande c = new Commande();
+		c.haut = true;
+		boolean dansLabyrinthe = true;
+		boolean surMur = false;
+		Case[][] tab_cases = mj.getCases();
+		
+		for(int i=0; i < 500; i++) {
+			
+			//Methode testee
+			mj.evoluer(c);
+			
+			for(int j=0; j < tab_cases.length; j++) {
+				
+				for (int k=0; k < tab_cases[j].length; k++) {
+					
+					if(!tab_cases[m.x][m.y].estFranchissable()) {
+						surMur = true;
+					}
+					
+				}
+				
+			}
+			
+			if((m.x < 0) || (m.x > MonJeu.TAILLE_PLATEAU-1) || (m.y < 0) || (m.y > MonJeu.TAILLE_PLATEAU-1) || (surMur)) {
+				dansLabyrinthe = false;
+			}
+			
+			//Validation des resultats
+			assertTrue("L'orc devrait toujours se trouver dans la zone du labyrinthe.", dansLabyrinthe);
 			
 		}
 		
