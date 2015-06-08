@@ -24,7 +24,7 @@ public class TestsAffichage {
 		//Preparation des donnees
 		//Methode testee
 		MonJeu mj = new MonJeu(11);
-		Heros p = mj.getPj();
+		Heros p = (Heros) mj.getPj();
 		
 		//Validation des resultats
 		assertEquals("La position en abscisse du personnage devrait etre 5.", 5, p.x);

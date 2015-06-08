@@ -18,7 +18,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseFranchissable() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 		
@@ -45,7 +45,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableDroite() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -71,7 +71,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableGauche() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -97,7 +97,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableBas() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -123,7 +123,7 @@ public class TestsCollisions {
 	public void testDeplacerVersCaseNonFranchissableHaut() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			
@@ -149,7 +149,7 @@ public class TestsCollisions {
 	public void testDeplacerEnDiagonaleHorsDuJeu() {
 		//donnees
 		MonJeu jeu=new MonJeu(11);
-		Heros heros=jeu.getPj();
+		Heros heros=(Heros)jeu.getPj();
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 			

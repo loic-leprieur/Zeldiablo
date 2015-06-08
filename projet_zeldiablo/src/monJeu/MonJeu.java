@@ -25,7 +25,7 @@ public class MonJeu implements Jeu {
 	 */
 	
 	public MonJeu(int taille) {
-		this.pj=new Personnage();		
+		this.pj=new Heros();		
 		tab_cases = new Case[taille][taille];
 		
 		
