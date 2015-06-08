@@ -24,12 +24,24 @@ public class TestsMonstresImmobiles {
 	public void testMonstresCrees() {
 		//donnees
 		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Monstre mob=(Monstre) jeu.getPj();
+		Monstre mob=(Monstre) jeu.getPj(1);
 		Boolean aEteCree=false;
+		Case[][] cases=jeu.getCases();	
+		Case caseLibre=new Case(true);
 		
 		//methode testee
-				
-		if(mob.x==1 && mob.y==1){
+		int i=0;
+		int j=0;
+		
+		while(i<cases.length){
+			if(cases[i][j].estFranchissable()){
+				caseLibre=cases[i][j];
+				i++;
+			}
+			j++;
+		}
+		
+		if(mob.x==i && mob.y==j){
 			aEteCree=true;
 		}
 		
@@ -44,7 +56,7 @@ public class TestsMonstresImmobiles {
 	public void testMonstresCreesSurCasesVides() {
 		//donnees
 		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Monstre mob=(Monstre) jeu.getPj();
+		Monstre mob=(Monstre) jeu.getPj(1);
 		Boolean aEteCree=false;
 		Case[][] cases=jeu.getCases();	
 		Case caseLibre=new Case(true);
@@ -76,10 +88,10 @@ public class TestsMonstresImmobiles {
 	public void testMonstresNonCreesSurCasesNonVides() {
 		//donnees
 		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Monstre mob=(Monstre) jeu.getPj();
-		Boolean aEteCree=false;
+		Monstre mob=(Monstre) jeu.getPj(1);
+		Boolean nonCree=true;
 		Case[][] cases=jeu.getCases();	
-		Case caseOccupe=new Case(true);
+		Case caseOccupee=new Case(true);
 				
 		int j=0;
 		int i=0;
@@ -87,19 +99,18 @@ public class TestsMonstresImmobiles {
 		//methode testee
 		while(i<cases.length){
 			if(!cases[i][j].estFranchissable()){
-				caseOccupe=cases[i][j];
+				caseOccupee=cases[i][j];
 				i++;
 			}
 			j++;
 		}
 				
 		if(mob.x==i && mob.y==j){
-			aEteCree=true;
+			nonCree=false;
 		}
 						
 		//valide le test
-		assertEquals("Le monstre n'a pas ete cree sur la case non vide",false, aEteCree);
-				
+		assertEquals("Le monstre a ete cree sur la case vide",false, nonCree);
 	}
 	
 	//donnees
