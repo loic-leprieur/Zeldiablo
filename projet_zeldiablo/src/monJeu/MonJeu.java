@@ -23,6 +23,19 @@ public class MonJeu implements Jeu {
 		this.pj=new Personnage();		
 		tab_cases = new Case[10][10];
 		
+		
+		for(int i = 0; i < 10; i++){
+			
+			for(int j = 0; j < 10; i++){
+				
+				tab_cases[i][j] = new Case(false);
+				
+			}
+			
+			
+			
+		}
+		
 	}
 
 	/**
