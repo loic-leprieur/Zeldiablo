@@ -52,8 +52,34 @@ public class MonJeu implements Jeu {
 	 *            chaine qui donne ordre
 	 */
 	public void evoluer(Commande commande) {
-		this.getPj().deplacer(commande);
+		//on prend les coordonnees actuelles du personnage
+		int posX = pj.x;
+		int posY = pj.y;
+				
+		//vérifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
+		if(commande.haut){
+			if(tab_cases[posX][posY-1].estFranchissable()){
+				this.getPj().deplacer(commande);
 
+			}
+		}
+		if(commande.bas){
+			if(tab_cases[posX][posY+1].estFranchissable()){
+				this.getPj().deplacer(commande);
+			}
+		}
+		if(commande.gauche){
+			if(tab_cases[posX-1][posY].estFranchissable()){
+				this.getPj().deplacer(commande);
+
+			}
+		}
+		if(commande.droite){
+			if(tab_cases[posX+1][posY].estFranchissable()){
+				this.getPj().deplacer(commande);
+
+			}
+		}
 	}
 
 	@Override
