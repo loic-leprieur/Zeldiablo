@@ -145,4 +145,36 @@ public class TestsDeplacementAleatoireMonstre {
 		
 	}
 	
+	
+	@Test
+	/**
+	 * Methode de test permettant de tester qu'un heros et un monstre
+	 * ne peuvent pas se trouver sur une meme case dans le labyrinthe
+	 */
+	public void test_Monstre_PasMemePositionQueHeros() {
+		
+		//Preparation des donnees
+		MonJeu mj = new MonJeu(11);
+		Monstre m = mj.getPj(1);
+		Personnage p = mj.getPj(0);
+		Commande c = new Commande();
+		c.haut = true;
+		boolean memePosition = false;
+		
+		for(int i=0; i < 500; i++) {
+			
+			//Methode testee
+			mj.evoluer(c);
+			
+			if((m.x == p.x) && (m.y == p.y)) {
+				memePosition = true;
+			}
+			
+			//Validation des resultats
+			assertTrue("Le monstre et le heros ne devraient pas se trouver sur la meme case.", !memePosition);
+			
+		}
+		
+	}
+	
 }
