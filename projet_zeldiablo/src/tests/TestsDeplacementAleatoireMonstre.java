@@ -158,11 +158,33 @@ public class TestsDeplacementAleatoireMonstre {
 		MonJeu mj = new MonJeu(31);
 		Monstre m = (Monstre) mj.getPj(1);
 		Personnage p = mj.getPj(0);
-		Commande c = new Commande();
-		c.haut = true;
 		boolean memePosition = false;
 		
 		for(int i=0; i < 500; i++) {
+			
+			int alea = (int)Math.random()*4;
+			
+			Commande c = new Commande();
+			
+			switch(alea) {
+			
+			case 0:
+				c.haut = true;
+				break;
+				
+			case 1:
+				c.bas = true;
+				break;
+				
+			case 2:
+				c.droite = true;
+				break;
+				
+			case 3:
+				c.gauche = true;
+				break;
+				
+			}
 			
 			//Methode testee
 			mj.evoluer(c);
