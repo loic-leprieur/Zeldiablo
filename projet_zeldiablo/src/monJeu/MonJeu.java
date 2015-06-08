@@ -33,6 +33,7 @@ public class MonJeu implements Jeu {
 			
 			for(int j = 0; j < taille; j++){
 				
+				//Condition pour un premier exemple d'affichage des cases
 				if(((i%2 == 0) && ((j%2 == 0) && (j != 4) && (j != 6))) ||  (i == 0) || (i == tab_cases.length-1) || (j == 0) || (j == tab_cases[i].length-1)) {
 				
 					tab_cases[i][j] = new Case(false);
