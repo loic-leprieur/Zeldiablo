@@ -94,6 +94,10 @@ public class MonJeu implements Jeu {
 			pj.x=posX;
 		if(pj.y==0 || pj.y==tab_cases.length-1)
 			pj.y=posY;
+		if(!(tab_cases[posX][posY].estFranchissable())){
+			pj.x=posX;
+			pj.y=posY;
+		}
 	}
 
 	@Override
