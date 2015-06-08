@@ -11,8 +11,8 @@ public abstract class Personnage {
 	/**
 	 * taille de l'environnement
 	 */
-	final static int LIMIT_X = 10;
-	final static int LIMIT_Y = 10;
+	final static int LIMIT_X = MonJeu.TAILLE_PLATEAU - 1;
+	final static int LIMIT_Y = MonJeu.TAILLE_PLATEAU - 1;
 
 	/**
 	 * deplacer le personnage dans une direction
