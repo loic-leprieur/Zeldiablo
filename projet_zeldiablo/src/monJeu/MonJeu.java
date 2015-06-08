@@ -65,7 +65,7 @@ public class MonJeu implements Jeu {
 		int posX = pj.x;
 		int posY = pj.y;
 				
-		//v�rifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
+		//verifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
 		if(commande.haut){
 			if(tab_cases[posX][posY-1].estFranchissable()){
 				this.getPj().deplacer(commande);
@@ -89,6 +89,11 @@ public class MonJeu implements Jeu {
 
 			}
 		}
+		//test gestion de l'appui sur deux touches a la fois
+		if(pj.x==0 || pj.x==tab_cases.length-1)
+			pj.x=posX;
+		if(pj.y==0 || pj.y==tab_cases.length-1)
+			pj.y=posY;
 	}
 
 	@Override
