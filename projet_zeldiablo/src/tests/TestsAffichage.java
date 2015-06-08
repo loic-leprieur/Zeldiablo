@@ -42,7 +42,7 @@ public class TestsAffichage {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(11);
-		Case[][] cases = new Case[10][10];
+		Case[][] cases = new Case[11][11];
 		
 		//Methode testee
 		cases = mj.getCases();
