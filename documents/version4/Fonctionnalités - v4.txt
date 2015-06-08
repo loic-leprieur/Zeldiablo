@@ -1,0 +1,26 @@
+Fonctionnalites realisees dans cette version 4 :
+
+
+
+        - 2.1 Génération de monstres immobiles :
+        
+                Criteres de validation testes dans la classe TestsMonstresImmobiles :
+                        
+                        + Il est possible de construire un labyrinthe par défaut contenant quelques monstres (le labyrinthe par défaut est à définir)
+                        + Les monstres sont créés sur des cases vides
+                        + Il n'est pas possible de générer des monstres sur des cases non vides (position du joueur, d'autres monstres ou de murs)
+                        + Les monstres doivent apparaître dans l'interface graphique sous la forme d'un cercle rouge
+                        + Les monstres ne se déplacent pas (mais attaquent éventuellement le héros s'il passe à proximité)
+                        
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        - 2.2 Déplacement aléatoire des monstres :
+        
+                Criteres de validation testes dans la classe TestsCollisions :
+                
+                        + A chaque évolution du jeu, que le joueur se déplace ou non, les monstres se déplacent
+                        + Les monstres sont bloqués par les obstacles. S'ils ont choisi de se diriger vers un obstacle (mur, joueur...),
+                          leur mouvement est alors annulé (sauf s'il s'agit de fantômes)
+                        + Deux monstres ou un monstre et un joueur ne peuvent pas se trouver sur la même case
+                        + A chaque évolution, tous les monstres tentent de se déplacer
+                        + L'interface graphique se met à jour en fonction des déplacements des monstres
