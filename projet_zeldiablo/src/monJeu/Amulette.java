@@ -53,7 +53,7 @@ public class Amulette extends Objet {
 		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
 		crayon.setColor(Color.YELLOW);
-		crayon.fillRect(getX() + 5, getY() + 5, (taille_c - 5), (taille_c - 5));
+		crayon.fillRect(getX() + 5, getY() + 5, (taille_c - 10), (taille_c - 10));
 		
 		}
 
