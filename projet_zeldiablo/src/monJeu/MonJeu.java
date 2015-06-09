@@ -34,9 +34,12 @@ public class MonJeu implements Jeu {
 		
 		TAILLE_PLATEAU = taille;
 		this.pj=new ArrayList<Personnage>();
+		this.obj=new ArrayList<Objet>();
 		pj.add(new Heros());
 		pj.add(new Orc());
 		pj.add(new Fantome());
+		
+		obj.add(new Amulette(1, 1));
 		tab_cases = new Case[taille][taille];
 		
 		
