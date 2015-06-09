@@ -108,8 +108,9 @@ public class MonJeu implements Jeu {
 			/* si la case d'arrivee est occupee, le personnage retourne a sa position initiale
 			 * sinon il se deplace sur la case qui devient occupee*/
 			if(commande.haut){
-				if(tab_cases[posX][posY-1].estFranchissable()){
+				if(tab_cases[posX][posY-1].estFranchissable() && !tab_cases[posX][posY-1].estOccupee()){
 					this.getPj(i).deplacer(commande);
+					tab_cases[posX][posY-1].setOccupee(true);
 
 				}
 			}
