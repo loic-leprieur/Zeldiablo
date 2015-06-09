@@ -137,7 +137,7 @@ public class MonJeu implements Jeu {
 				}
 			}
 			if(commande.droite){
-				if(posX+1>=0 && posY+1<TAILLE_PLATEAU){
+				if(posX+1>=0 && posX+1<TAILLE_PLATEAU){
 					if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
 						this.getPj(i).deplacer(commande);
 					
