@@ -4,11 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public class Troll extends Monstre {
+public class Orc extends Monstre {
 	
 	
 
-	public Troll() {
+	public Orc() {
 		
 		super();
 	}

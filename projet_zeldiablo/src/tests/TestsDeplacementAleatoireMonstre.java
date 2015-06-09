@@ -5,7 +5,7 @@ import monJeu.Case;
 import monJeu.MonJeu;
 import monJeu.Monstre;
 import monJeu.Personnage;
-import monJeu.Troll;
+import monJeu.Orc;
 import moteurJeu.Commande;
 
 import org.junit.Test;
@@ -26,7 +26,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t = (Troll) mj.getPj(1);
+		Orc t = (Orc) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
 		int posXInit = t.x;
@@ -52,7 +52,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t = (Troll) mj.getPj(1);
+		Orc t = (Orc) mj.getPj(1);
 		Commande c = new Commande();
 		
 		//VERIFIER LE TEST LORSQUE LE MONSTRE POURRA FRAPPER PAR EXEMPLE
@@ -112,7 +112,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t = (Troll)mj.getPj(1);
+		Orc t = (Orc)mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
 		boolean dansLabyrinthe = true;
@@ -157,7 +157,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t = (Troll) mj.getPj(1);
+		Orc t = (Orc) mj.getPj(1);
 		Personnage p = mj.getPj(0);
 		boolean memePosition = false;
 		
@@ -211,8 +211,8 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t1 = (Troll) mj.getPj(1);
-		Troll t2 = (Troll) mj.getPj(2);
+		Orc t1 = (Orc) mj.getPj(1);
+		Orc t2 = (Orc) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
 		boolean memePosition = false;
@@ -243,8 +243,8 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Troll t1 = (Troll) mj.getPj(1);
-		Troll t2 = (Troll) mj.getPj(2);
+		Orc t1 = (Orc) mj.getPj(1);
+		Orc t2 = (Orc) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
 		
