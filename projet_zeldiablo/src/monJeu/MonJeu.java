@@ -20,7 +20,6 @@ public class MonJeu implements Jeu {
 	 * le personnage du jeu
 	 */
 	private ArrayList<Personnage> pj;
-	private ArrayList<Objet> obj;
 	private Case[][] tab_cases;
 	public static int TAILLE_PLATEAU = 0;
 	
@@ -34,12 +33,9 @@ public class MonJeu implements Jeu {
 		
 		TAILLE_PLATEAU = taille;
 		this.pj=new ArrayList<Personnage>();
-		this.obj=new ArrayList<Objet>();
 		pj.add(new Heros());
 		pj.add(new Orc());
 		pj.add(new Fantome());
-		
-		obj.add(new Amulette(29, 29));
 		tab_cases = new Case[taille][taille];
 		
 		
@@ -168,18 +164,6 @@ public class MonJeu implements Jeu {
 			}
 		}
 		
-		
-		
-		////////// A REFAIRE CAR MAL OPTIMISE ///////////////////////////:::
-
-		Amulette amu = (Amulette) obj.get(0);
-		
-		if(amu.comparerPosition(pj.get(0))){
-			
-			amu.setHeros( (Heros) pj.get(0)); 
-			
-			
-		}
 	}
 	
 	
@@ -225,11 +209,6 @@ public class MonJeu implements Jeu {
 			
 			
 			pj.get(i).dessinerObjet(im);
-			
-			for(int j =0; j<obj.size();j++){
-				obj.get(j).dessinerObjet(im);
-			}
-			
 		}
 		
 		
@@ -249,9 +228,6 @@ public class MonJeu implements Jeu {
 			return pj.get(i);
 	}
 	
-	public Objet getObjet(int indice){
-		return obj.get(indice);
-	}
 
 	public Case[][] getCases(){
 		
