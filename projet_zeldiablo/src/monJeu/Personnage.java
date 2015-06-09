@@ -3,6 +3,11 @@ import java.awt.image.BufferedImage;
 
 import moteurJeu.*;
 
+
+/**
+ * Classe modelisant un personnage
+ * 
+ */
 public abstract class Personnage {
 	/**
 	 * position en X et y
