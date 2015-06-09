@@ -33,71 +33,13 @@ public class DessinMonJeu implements DessinJeu {
 		this.jeu = j;
 	}
 
-	/**
-	 * dessiner un objet consiste a dessiner sur l'image suivante methode
-	 * redefinie de Afficheur
-	 */
-	private void dessinerObjet(String s, int x, int y, BufferedImage im) {
-		Graphics2D crayon = (Graphics2D) im.getGraphics();
-		switch (s) {
-		case "PJ":
-			crayon.setColor(Color.blue);
-			crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-		case "MUR":
-			crayon.setColor(Color.gray);
-			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-			
-		case "MONS":
-			crayon.setColor(Color.RED);
-			crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-			
-		default:
-			throw new AssertionError("objet inexistant");
-		}
-	}
-
+	
 	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
-		// no sait que c'est un jeuTest
-		MonJeu mJeu = (MonJeu) jeu;
-		Heros pj = (Heros) mJeu.getPj(0);
 		
-		int k = 1;
-		Monstre mons = (Monstre) mJeu.getPj(k);
-	
-		
-		while(mons != null){
-			k++;
-			this.dessinerObjet("MONS", mons.x, mons.y, im);
-			mons = (Monstre) mJeu.getPj(k);
-		}
-		
-		
-		
-		this.dessinerObjet("PJ", pj.x, pj.y, im);
-		
-		for (int i = 0; i < jeu.getCases().length; i++) {
-
-			for (int j = 0; j < jeu.getCases().length; j++) {
-
-				if (!(jeu.getCases()[i][j].estFranchissable())) {
-
-					this.dessinerObjet("MUR", i, j, im);
-
-				}
-
-			}
-		}
-		
-		jeu.getCases()[pj.x][pj.y].setFranchissable(true);
+		jeu.dessinerObjet(im);
 	}
 
 }
