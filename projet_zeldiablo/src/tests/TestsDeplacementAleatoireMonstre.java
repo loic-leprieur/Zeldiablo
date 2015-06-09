@@ -162,7 +162,7 @@ public class TestsDeplacementAleatoireMonstre {
 		
 		for(int i=0; i < 500; i++) {
 			
-			int alea = (int)Math.random()*4;
+			int alea = (int)(Math.random()*4);
 			
 			Commande c = new Commande();
 			
