@@ -154,13 +154,13 @@ public class MonJeu implements Jeu {
 					pj.get(i).setY(posY);
 				
 				}else{
-					tab_cases[pj.get(i).x][pj.get(i).y].setOccupee(true);
+					tab_cases[pj.get(i).getX()][pj.get(i).getY()].setOccupee(true);
 					tab_cases[posX][posY].setOccupee(false);
 
 				}
 			}else{
-				pj.get(i).x=posX;
-				pj.get(i).y=posY;
+				pj.get(i).setX(posX);
+				pj.get(i).setY(posY);
 			}
 		}
 	}
