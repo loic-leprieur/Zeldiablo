@@ -80,7 +80,10 @@ public class Controleur implements KeyListener {
 	 * met a jour les commandes quand le joueur relache une touche
 	 */
 	public void keyReleased(KeyEvent e) {
-		switch (e.getKeyChar()) {
+		
+		char com = (char) Character.toLowerCase(e.getKeyCode());
+		
+		switch (com) {
 		case 'q':
 			this.commandeEnCours.gauche = false;
 			break;
