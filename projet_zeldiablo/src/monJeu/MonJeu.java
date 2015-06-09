@@ -79,8 +79,8 @@ public class MonJeu implements Jeu {
 	public void evoluer(Commande cde) {
 		//on prend les coordonnees actuelles du personnage
 		for(int i=0;i<pj.size();i++){
-			int posX = pj.get(i).x;
-			int posY = pj.get(i).y;
+			int posX = pj.get(i).getX();
+			int posY = pj.get(i).getY();
 			//pour le choix aleatoire de direction
 			int choix;
 			//pour la commande a effectuer selon si heros ou monstre
@@ -147,11 +147,11 @@ public class MonJeu implements Jeu {
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
-			if(pj.get(i).x>=0 && pj.get(i).x <TAILLE_PLATEAU && pj.get(i).y>=0 && pj.get(i).y <TAILLE_PLATEAU){
-				if(!(this.getPj(i).verifierCase(tab_cases[pj.get(i).x][pj.get(i).y])) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
+			if(pj.get(i).getX()>=0 && pj.get(i).getX() <TAILLE_PLATEAU && pj.get(i).getY()>=0 && pj.get(i).getY() <TAILLE_PLATEAU){
+				if(!(this.getPj(i).verifierCase(tab_cases[pj.get(i).getX()][pj.get(i).getY()])) || tab_cases[pj.get(i).getX()][pj.get(i).getY()].estOccupee()){
 				
-					pj.get(i).x=posX;
-					pj.get(i).y=posY;
+					pj.get(i).setX(posX);;
+					pj.get(i).setY(posY);
 				
 				}else{
 					tab_cases[pj.get(i).x][pj.get(i).y].setOccupee(true);
