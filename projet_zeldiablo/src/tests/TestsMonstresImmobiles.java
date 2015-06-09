@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.Assert.*;
 import monJeu.Case;
+import monJeu.Heros;
 import monJeu.MonJeu;
 import monJeu.Monstre;
 import moteurJeu.Commande;
@@ -23,63 +24,20 @@ public class TestsMonstresImmobiles {
 	@Test
 	public void testMonstresCrees() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Monstre mob=(Monstre) jeu.getPj(1);
-		Boolean aEteCree=false;
 		Case[][] cases=jeu.getCases();	
-		Case caseLibre=new Case(true);
+		boolean occupee = false;
 		
-		//methode testee
-		int i=0;
-		int j=0;
-		
-		while(i<cases.length){
-			if(cases[i][j].estFranchissable()){
-				caseLibre=cases[i][j];
-				i++;
-			}
-			j++;
-		}
-		
-		if(mob.x==i && mob.y==j){
-			aEteCree=true;
+		//Methode testee
+		if(cases[mob.getX()][mob.getY()].estFranchissable()) { 
+			occupee = cases[mob.getX()][mob.getY()].estOccupee();
 		}
 		
 		//valide le test
-		assertEquals("Le monstre a ete cree sur la case vide",true, aEteCree);
+		assertEquals("Le monstre a ete cree sur la case vide",true, occupee);
 	}
 	
-	/**
-	 * 
-	 */
-	@Test
-	public void testMonstresCreesSurCasesVides() {
-		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Monstre mob=(Monstre) jeu.getPj(1);
-		Boolean aEteCree=false;
-		Case[][] cases=jeu.getCases();	
-		Case caseLibre=new Case(true);
-		
-		int j=0;
-		int i=0;
-		
-		//methode testee
-		while(i<cases.length){
-			if(cases[i][j].estFranchissable()){
-				caseLibre=cases[i][j];
-				i++;
-			}
-			j++;
-		}
-		
-		if(mob.x==i && mob.y==j){
-			aEteCree=true;
-		}
-				
-		//valide le test
-		assertEquals("Le monstre a ete cree sur la case vide",true, aEteCree);
-	}
 	
 	/**
 	 * 
@@ -87,30 +45,19 @@ public class TestsMonstresImmobiles {
 	@Test
 	public void testMonstresNonCreesSurCasesNonVides() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
-		Monstre mob=(Monstre) jeu.getPj(1);
-		Boolean nonCree=true;
-		Case[][] cases=jeu.getCases();	
-		Case caseOccupee=new Case(true);
+		MonJeu jeu=new MonJeu(31);
+		Monstre mob1 = (Monstre) jeu.getPj(1);
+		Monstre mob2 = (Monstre) jeu.getPj(2);
+		Heros h = (Heros) jeu.getPj(0);
+		Case[][] cases=jeu.getCases();
 				
-		int j=0;
-		int i=0;
-				
-		//methode testee
-		while(i<cases.length){
-			if(!cases[i][j].estFranchissable()){
-				caseOccupee=cases[i][j];
-				i++;
-			}
-			j++;
-		}
-				
-		if(mob.x==i && mob.y==j){
-			nonCree=false;
-		}
+		//Methode testee
+		boolean pasMemePlaceMonstre = ((mob1.getX() != mob2.getX()) || (mob1.getY() != mob2.getY()));
+		boolean pasMemePlaceHeros = ((mob1.getX() != h.getX()) || (mob1.getY() != mob2.getY()));
+		boolean pasSurMemeCase = (pasMemePlaceMonstre && pasMemePlaceHeros);
 						
 		//valide le test
-		assertEquals("Le monstre a ete cree sur la case vide",false, nonCree);
+		assertEquals("Le monstre a ete cree sur la case vide",true, pasSurMemeCase);
 	}
 	
 	//donnees

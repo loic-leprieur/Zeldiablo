@@ -15,7 +15,8 @@ public class Fantome extends Monstre {
 	 * Constructeur d'un fantome
 	 */
 	public Fantome() {
-		super();
+		setX(MonJeu.TAILLE_PLATEAU-3);
+		setY(3);
 	}
 
 	
