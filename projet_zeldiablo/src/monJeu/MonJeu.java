@@ -46,11 +46,11 @@ public class MonJeu implements Jeu {
 				//Condition pour un premier exemple d'affichage des cases
 				if(((i%2 == 0) && (j%2 == 0)) ||  (i == 0) || (i == tab_cases.length-1) || (j == 0) || (j == tab_cases[i].length-1)) {
 				
-					tab_cases[i][j] = new Case(false);
+					tab_cases[i][j] = new Case(i, j, false);
 				
 				} else {
 				
-					tab_cases[i][j] = new Case(true);
+					tab_cases[i][j] = new Case(i, j, true);
 					
 				}
 					
@@ -201,12 +201,7 @@ public class MonJeu implements Jeu {
 
 			for (int j = 0; j < tab_cases.length; j++) {
 
-				if (!(tab_cases[i][j].estFranchissable())) {
-
-					
-					crayon.setColor(Color.gray);
-					crayon.fillRect(i * taille_c, j *  taille_c, taille_c, taille_c);
-				}
+				tab_cases[i][j].dessinerObjet(im);
 		
 		
 			}

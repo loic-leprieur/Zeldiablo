@@ -12,8 +12,7 @@ public abstract class Personnage {
 	/**
 	 * position en X et y
 	 */
-	private int x;
-	private int y;
+	protected int x,y;
 
 	/**
 	 * deplacer le personnage dans une direction

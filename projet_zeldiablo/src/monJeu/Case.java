@@ -1,10 +1,18 @@
 package monJeu;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
 
 /**
  * Classe modelisant une case
  */
 public class Case {
+	
+	
+	protected int x,y;
+	
 	
 	/**
 	 * Attribut representant la franchissabilite d'une case et si elle est occupee
@@ -23,9 +31,11 @@ public class Case {
 	 */
 	
 	
-	public Case(boolean etat){
+	public Case(int posX, int posY, boolean etat){
 		
 		
+		this.x = posX;
+		this.y = posY;
 		this.franchissable = etat;
 		
 		
@@ -79,6 +89,27 @@ public class Case {
 	 */
 	public void setOccupee(boolean occupee) {
 		this.occupee = occupee;
+	}
+	
+	
+	public void dessinerObjet(BufferedImage im){
+		
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		int taille_c = DessinMonJeu.TAILLE_CASE;
+		
+		if(!estFranchissable()){
+			
+			
+			crayon.setColor(Color.gray);
+			crayon.fillRect(this.x * taille_c, this.y *  taille_c, taille_c, taille_c);
+			
+			
+		}
+		
+		
+		
+		
+		
 	}
 
 

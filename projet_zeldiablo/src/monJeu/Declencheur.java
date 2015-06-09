@@ -2,8 +2,8 @@ package monJeu;
 
 public abstract class Declencheur extends Case {
 
-	public Declencheur(boolean etat) {
-		super(etat);
+	public Declencheur(int posX, int posY, boolean etat) {
+		super(posX, posY, etat);
 	}
 	
 	
