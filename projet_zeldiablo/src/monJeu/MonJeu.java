@@ -113,39 +113,40 @@ public class MonJeu implements Jeu {
 			if(commande.haut){
 				if(tab_cases[posX][posY-1].estFranchissable() && !tab_cases[posX][posY-1].estOccupee()){
 					this.getPj(i).deplacer(commande);
-					tab_cases[posX][posY-1].setOccupee(true);
-					tab_cases[posX][posY].setOccupee(false);
+					
 
 				}
 			}
 			if(commande.bas){
 				if(tab_cases[posX][posY+1].estFranchissable() && !tab_cases[posX][posY+1].estOccupee()){
 					this.getPj(i).deplacer(commande);
-					tab_cases[posX][posY+1].setOccupee(true);
-					tab_cases[posX][posY].setOccupee(false);
+					
 				}
 			}
 			if(commande.gauche){
 				if(tab_cases[posX-1][posY].estFranchissable() && !tab_cases[posX-1][posY].estOccupee()){
 					this.getPj(i).deplacer(commande);
-					tab_cases[posX-1][posY].setOccupee(true);
-					tab_cases[posX][posY].setOccupee(false);
+					
 
 				}
 			}
 			if(commande.droite){
 				if(tab_cases[posX+1][posY].estFranchissable() && !tab_cases[posX+1][posY].estOccupee()){
 					this.getPj(i).deplacer(commande);
-					tab_cases[posX+1][posY].setOccupee(true);
-					tab_cases[posX][posY].setOccupee(false);
-
+					
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
 			
-			if(!(tab_cases[pj.get(i).x][pj.get(i).y].estFranchissable())){
+			if(!(tab_cases[pj.get(i).x][pj.get(i).y].estFranchissable()) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
+				
 				pj.get(i).x=posX;
 				pj.get(i).y=posY;
+				
+			}else{
+				tab_cases[pj.get(i).x][pj.get(i).y].setOccupee(true);
+				tab_cases[posX][posY].setOccupee(false);
+
 			}
 		}
 	}
