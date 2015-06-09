@@ -39,7 +39,7 @@ public class MonJeu implements Jeu {
 		pj.add(new Orc());
 		pj.add(new Fantome());
 		
-		obj.add(new Amulette(1, 1));
+		obj.add(new Amulette(29, 29));
 		tab_cases = new Case[taille][taille];
 		
 		
