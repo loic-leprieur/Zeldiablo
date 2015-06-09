@@ -11,11 +11,15 @@ import moteurJeu.Commande;
  */
 public class Heros extends Personnage{
 	
+	private boolean possedeAmu;
+	
+	
 	/**
 	 * constructeur vide
 	 */
 	public Heros() {
 		
+		this.possedeAmu = false;
 		
 		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
 			this.setX((MonJeu.TAILLE_PLATEAU - 1) / 2);
@@ -53,6 +57,22 @@ public class Heros extends Personnage{
 		crayon.setColor(Color.blue);
 		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
 		
+	}
+
+
+	/**
+	 * @return the possedeAmu
+	 */
+	public boolean isPossedeAmu() {
+		return possedeAmu;
+	}
+
+
+	/**
+	 * @param possedeAmu the possedeAmu to set
+	 */
+	public void setPossedeAmu(boolean possedeAmu) {
+		this.possedeAmu = possedeAmu;
 	}
 
 }
