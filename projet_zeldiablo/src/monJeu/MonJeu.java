@@ -174,7 +174,14 @@ public class MonJeu implements Jeu {
 				pj.get(i).setY(posY);
 			}
 		}
-		
+	
+		if(tab_cases[pj.get(0).getX()][pj.get(0).getY()] instanceof Declencheur){
+			
+			Declencheur dec = (Declencheur) tab_cases[pj.get(0).getX()][pj.get(0).getY()];
+			
+			dec.declencherEffet(pj.get(0));
+				
+		}
 	}
 	
 	
