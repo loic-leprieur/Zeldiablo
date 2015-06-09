@@ -107,9 +107,11 @@ public class MonJeu implements Jeu {
 					
 				}
 			}
-			//verifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
-			/* si la case d'arrivee est occupee, le personnage retourne a sa position initiale
-			 * sinon il se deplace sur la case qui devient occupee*/
+			/*
+			 * verifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
+			 * si la case d'arrivee est occupee, le personnage retourne a sa position initiale
+			 * sinon il se deplace sur la case qui devient occupee
+			 */
 			if(commande.haut){
 				if(posY-1>=0 && posY-1<TAILLE_PLATEAU){
 					if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
