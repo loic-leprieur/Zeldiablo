@@ -10,6 +10,11 @@ public class Porte extends Declencheur{
 	@Override
 	public void declencherEffet(Personnage pers) {
 		// TODO Auto-generated method stub
+		if(((Heros)pers).isPossedeAmu()){
+			
+		}else{
+			
+		}
 		
 	}
 
