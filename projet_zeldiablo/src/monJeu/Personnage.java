@@ -65,6 +65,14 @@ public abstract class Personnage {
 		
 	}
 	
+	public boolean verifierCase(Case c){
+		
+		
+		
+		return false;
+		
+	}
+	
 	
 	/**
 	 * Methode retournant les caracteristiques d'un personnage
