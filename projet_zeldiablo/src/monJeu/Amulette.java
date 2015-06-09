@@ -77,6 +77,22 @@ public class Amulette extends Objet {
 	}
 
 	
+	public boolean comparerPosition(Personnage pers){
+		
+		
+		if(pers.getX() == getX() && pers.getY() == getY()){
+			
+			return true;
+			
+			
+		}else{
+			
+			return false;
+		}
+		
+		
+	}
+	
 	/**
 	 * 
 	 * Getter de l'attribut porteur
