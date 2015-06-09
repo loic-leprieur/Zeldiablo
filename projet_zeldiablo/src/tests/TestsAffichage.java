@@ -27,8 +27,8 @@ public class TestsAffichage {
 		Heros p = (Heros) mj.getPj(0);
 		
 		//Validation des resultats
-		assertEquals("La position en abscisse du personnage devrait etre 1.", 1, p.x);
-		assertEquals("La position en ordonnee du personnage devrait etre 1.", 1, p.y);
+		assertEquals("La position en abscisse du personnage devrait etre 1.", 1, p.getX());
+		assertEquals("La position en ordonnee du personnage devrait etre 1.", 1, p.getY());
 		
 	}
 	
