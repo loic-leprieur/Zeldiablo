@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.Assert.*;
 import monJeu.Case;
+import monJeu.Fantome;
 import monJeu.MonJeu;
 import monJeu.Monstre;
 import monJeu.Personnage;
