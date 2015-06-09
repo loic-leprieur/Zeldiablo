@@ -4,6 +4,10 @@ import java.awt.image.BufferedImage;
 
 import moteurJeu.Commande;
 
+
+/**
+ * Classe modelisant un monstre
+ */
 public abstract class Monstre extends Personnage {
 
 	
