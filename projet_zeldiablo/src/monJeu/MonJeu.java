@@ -35,7 +35,7 @@ public class MonJeu implements Jeu {
 		this.pj=new ArrayList<Personnage>();
 		pj.add(new Heros());
 		pj.add(new Orc());
-		pj.add(new Orc());
+		pj.add(new Fantome());
 		tab_cases = new Case[taille][taille];
 		
 		
