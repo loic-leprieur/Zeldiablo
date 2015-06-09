@@ -111,42 +111,54 @@ public class MonJeu implements Jeu {
 			/* si la case d'arrivee est occupee, le personnage retourne a sa position initiale
 			 * sinon il se deplace sur la case qui devient occupee*/
 			if(commande.haut){
-				if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
-					this.getPj(i).deplacer(commande);
+				if(posY-1>=0 && posY-1<TAILLE_PLATEAU){
+					if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
+						this.getPj(i).deplacer(commande);
 					
 
+					}
 				}
 			}
 			if(commande.bas){
-				if(this.getPj(i).verifierCase(tab_cases[posX][posY+1]) && !tab_cases[posX][posY+1].estOccupee()){
-					this.getPj(i).deplacer(commande);
+				if(posY+1>=0 && posY+1<TAILLE_PLATEAU){
+					if(this.getPj(i).verifierCase(tab_cases[posX][posY+1]) && !tab_cases[posX][posY+1].estOccupee()){
+						this.getPj(i).deplacer(commande);
 					
+					}
 				}
 			}
 			if(commande.gauche){
-				if(this.getPj(i).verifierCase(tab_cases[posX-1][posY]) && !tab_cases[posX-1][posY].estOccupee()){
-					this.getPj(i).deplacer(commande);
+				if(posX-1>=0 && posX-1<TAILLE_PLATEAU){
+					if(this.getPj(i).verifierCase(tab_cases[posX-1][posY]) && !tab_cases[posX-1][posY].estOccupee()){
+						this.getPj(i).deplacer(commande);
 					
 
+					}
 				}
 			}
 			if(commande.droite){
-				if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
-					this.getPj(i).deplacer(commande);
+				if(posX+1>=0 && posY+1<TAILLE_PLATEAU){
+					if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
+						this.getPj(i).deplacer(commande);
 					
+					}
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
-			
-			if(!(this.getPj(i).verifierCase(tab_cases[pj.get(i).x][pj.get(i).y])) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
+			if(pj.get(i).x>=0 && pj.get(i).x <TAILLE_PLATEAU && pj.get(i).y>=0 && pj.get(i).y <TAILLE_PLATEAU){
+				if(!(this.getPj(i).verifierCase(tab_cases[pj.get(i).x][pj.get(i).y])) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
 				
+					pj.get(i).x=posX;
+					pj.get(i).y=posY;
+				
+				}else{
+					tab_cases[pj.get(i).x][pj.get(i).y].setOccupee(true);
+					tab_cases[posX][posY].setOccupee(false);
+
+				}
+			}else{
 				pj.get(i).x=posX;
 				pj.get(i).y=posY;
-				
-			}else{
-				tab_cases[pj.get(i).x][pj.get(i).y].setOccupee(true);
-				tab_cases[posX][posY].setOccupee(false);
-
 			}
 		}
 	}
