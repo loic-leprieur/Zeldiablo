@@ -52,3 +52,27 @@ Fonctionnalites realisees dans cette version 6 :
 +						+ Lorsque le héros possède l'amulette et qu'il retourne à l'entrée du labyrinthe, le jeu s'arrête et un message est affiché dans la console.
 
 +						+ Lorsque le héros ne possède pas l'amulette, le jeu ne s'arrête pas même si le héros retourne à l'entrée
+
++
+
++
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
++
+
++	- 2.3 Monstre attiré par le héros
+
+
++				Criteres de validation :
+
++				
+
++						+ Après son déplacement, un monstre doit être plus proche de son héros qu'avant son déplacement
+
++						+ Les monstres soumis aux obstacles peuvent se trouver bloqués dans des culs de sacs
+
++
+
+
+
