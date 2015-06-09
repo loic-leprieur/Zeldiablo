@@ -20,6 +20,7 @@ public class MonJeu implements Jeu {
 	 * le personnage du jeu
 	 */
 	private ArrayList<Personnage> pj;
+	private ArrayList<Objet> obj;
 	private Case[][] tab_cases;
 	public static int TAILLE_PLATEAU = 0;
 	
@@ -226,6 +227,10 @@ public class MonJeu implements Jeu {
 			return null;
 		else
 			return pj.get(i);
+	}
+	
+	public Objet getObjet(int indice){
+		return obj.get(indice);
 	}
 
 	public Case[][] getCases(){
