@@ -1,0 +1,22 @@
+Fonctionnalites realisees dans cette version 5 :
+
+
+
+        - 3.1 Collision avec un monstre :
+        
+                Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
+                        
+                        + La collision fonctionne dans les 4 directions
+                        + Si la case est vide, le personnage avance
+                        + Le monstre se déplace à chaque fois après le joueur
+                        
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        - 3.2 Fantômes :
+        
+                Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
+                
+                        + Les fantômes peuvent traverser des murs mais pas les autres personnages (les autres monstres ou le héros)
+                        + Les autres monstres continuent à être bloqués par des murs
+                        + Les attaques des fantômes fonctionnent de la même manière que les attaques des monstres de base
+						
