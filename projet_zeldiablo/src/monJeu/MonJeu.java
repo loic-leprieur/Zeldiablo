@@ -58,6 +58,9 @@ public class MonJeu implements Jeu {
 
 		}
 		
+		
+		tab_cases[29][29] = new Amulette(29, 29, true);
+		
 		for(int k=0; k<pj.size();k++){
 			Personnage perso=pj.get(k);
 			tab_cases[perso.getX()][perso.getY()].setOccupee(true);
