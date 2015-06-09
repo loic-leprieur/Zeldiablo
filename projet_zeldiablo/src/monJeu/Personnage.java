@@ -66,11 +66,12 @@ public abstract class Personnage {
 	}
 	
 	public boolean verifierCase(Case c){
-		if(c.estFranchissable() || !(c.estOccupee()) ){
+		if(c.estFranchissable() && !(c.estOccupee()) ){
 			return true;
+		}else{
+			return false;
 		}
 		
-		return false;
 		
 	}
 	
