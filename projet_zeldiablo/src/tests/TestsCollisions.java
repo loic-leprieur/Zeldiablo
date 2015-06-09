@@ -21,18 +21,25 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseFranchissable() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
+		int posX, posY;
+		posX=heros.x;
+		posY=heros.y;
+		Case caseDepart=tab_cases[posX][posY];
 		
 		//methode testee
 		Commande allerAdroite = new Commande();
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
-		caseArrivee.setFranchissable(true);
-		if(caseArrivee.estFranchissable()){
+		posX=heros.x;
+		posY=heros.y;
+		
+		Case caseArrivee=tab_cases[posX][posY];
+		
+		if(!heros.verifierCase(caseArrivee) && heros.verifierCase(caseDepart)){
 			aFranchis=true;
 		}
 		
@@ -48,7 +55,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseNonFranchissableDroite() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
@@ -74,7 +81,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseNonFranchissableGauche() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
@@ -100,7 +107,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseNonFranchissableBas() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
@@ -126,7 +133,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerVersCaseNonFranchissableHaut() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
@@ -152,7 +159,7 @@ public class TestsCollisions {
 	@Test
 	public void testDeplacerEnDiagonaleHorsDuJeu() {
 		//donnees
-		MonJeu jeu=new MonJeu(MonJeu.TAILLE_PLATEAU);
+		MonJeu jeu=new MonJeu(31);
 		Heros heros=(Heros)jeu.getPj(0);
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
