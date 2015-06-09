@@ -111,34 +111,34 @@ public class MonJeu implements Jeu {
 			/* si la case d'arrivee est occupee, le personnage retourne a sa position initiale
 			 * sinon il se deplace sur la case qui devient occupee*/
 			if(commande.haut){
-				if(tab_cases[posX][posY-1].estFranchissable() && !tab_cases[posX][posY-1].estOccupee()){
+				if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
 					this.getPj(i).deplacer(commande);
 					
 
 				}
 			}
 			if(commande.bas){
-				if(tab_cases[posX][posY+1].estFranchissable() && !tab_cases[posX][posY+1].estOccupee()){
+				if(this.getPj(i).verifierCase(tab_cases[posX][posY+1]) && !tab_cases[posX][posY+1].estOccupee()){
 					this.getPj(i).deplacer(commande);
 					
 				}
 			}
 			if(commande.gauche){
-				if(tab_cases[posX-1][posY].estFranchissable() && !tab_cases[posX-1][posY].estOccupee()){
+				if(this.getPj(i).verifierCase(tab_cases[posX-1][posY]) && !tab_cases[posX-1][posY].estOccupee()){
 					this.getPj(i).deplacer(commande);
 					
 
 				}
 			}
 			if(commande.droite){
-				if(tab_cases[posX+1][posY].estFranchissable() && !tab_cases[posX+1][posY].estOccupee()){
+				if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
 					this.getPj(i).deplacer(commande);
 					
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
 			
-			if(!(tab_cases[pj.get(i).x][pj.get(i).y].estFranchissable()) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
+			if(!(this.getPj(i).verifierCase(tab_cases[pj.get(i).x][pj.get(i).y])) || tab_cases[pj.get(i).x][pj.get(i).y].estOccupee()){
 				
 				pj.get(i).x=posX;
 				pj.get(i).y=posY;
