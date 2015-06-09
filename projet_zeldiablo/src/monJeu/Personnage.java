@@ -1,4 +1,6 @@
 package monJeu;
+import java.awt.image.BufferedImage;
+
 import moteurJeu.*;
 
 public abstract class Personnage {
@@ -68,5 +70,10 @@ public abstract class Personnage {
 	 * Methode retournant les caracteristiques d'un personnage
 	 */
 	public abstract String toString();
+
 	
+	/**
+	 * Methode permettant de dessiner un personnage dans le labyrinthe
+	 */
+	public abstract void dessinerObjet(BufferedImage im);
 }
