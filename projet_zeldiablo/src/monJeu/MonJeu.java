@@ -88,6 +88,8 @@ public class MonJeu implements Jeu {
 	 *            chaine qui donne ordre
 	 */
 	public void evoluer(Commande cde) {
+		int update = 0;
+				
 		//on prend les coordonnees actuelles du personnage
 		for(int i=0;i<pj.size();i++){
 			int posX = pj.get(i).getX();
@@ -102,13 +104,52 @@ public class MonJeu implements Jeu {
 				//test si le mosntre est proche du heros
 				if(-10<=pj.get(i).getX()-pj.get(0).getX() && 10>=pj.get(i).getX()-pj.get(0).getX() 
 				&& -10<=pj.get(i).getY()-pj.get(0).getY() && 10>=pj.get(i).getY()-pj.get(0).getY()){
-					System.out.println("coucou");
-					//TODO : dans le cas monstre proche
+					
+		
+					Heros h = (Heros) pj.get(0);
+					Monstre m = (Monstre) pj.get(i);
 					commande = new Commande();
-					commande.haut=true;
+					
+					if(h.getX() > m.getX()){
+						
+						commande.droite = true;
+						
+						if(h.getY() < m.getY()){
+							
+							commande.haut = true;
+						
+						}else{
+							
+							commande.bas = true;
+							
+						}
+						
+						
+					}else{
+						
+						
+						commande.gauche = true;
+						
+						if(h.getY() < m.getY()){
+							
+							commande.haut = true;
+						
+						}else{
+							
+							commande.bas = true;
+							
+						}
+						
+						
+					}
+					
+					
+					
+					
+					
 					
 				}else{
-					//le monstre est éloigné donc il choisit une direction au hasard
+					//le monstre est ï¿½loignï¿½ donc il choisit une direction au hasard
 					commande = new Commande();
 					choix = pj.get(i).choixAleatoire();
 					switch(choix){
@@ -184,6 +225,8 @@ public class MonJeu implements Jeu {
 				pj.get(i).setX(posX);
 				pj.get(i).setY(posY);
 			}
+			
+			update++;
 		}
 	
 		if(tab_cases[pj.get(0).getX()][pj.get(0).getY()] instanceof Declencheur){

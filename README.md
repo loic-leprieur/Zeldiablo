@@ -20,3 +20,11 @@ Fonctionnalités réalisées :
        - 3.1 Collision avec un monstre
 
        - 3.2 Fantômes
+
+       - 5.2 Mise en place de l'amulette
+
+       - 5.3 Acquisition de l'amulette
+
+       - 5.4 Fin du jeu
+
+       - 2.3 Monstres attirés par le héros
