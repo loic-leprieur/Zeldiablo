@@ -105,6 +105,8 @@ public class MonJeu implements Jeu {
 				}
 			}
 			//verifie que la case de destination de personnage est franchissable sinon le deplacement ne se fait pas
+			/* si la case d'arrivee est occupee, le personnage retourne a sa position initiale
+			 * sinon il se deplace sur la case qui devient occupee*/
 			if(commande.haut){
 				if(tab_cases[posX][posY-1].estFranchissable()){
 					this.getPj(i).deplacer(commande);
