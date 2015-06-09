@@ -50,12 +50,23 @@ public abstract class Personnage {
 	}
 	
 	
+	/**
+	 * Methode permettant de recuperer un entier aleatoire compris entre 0 et 4
+	 * (utilisee pours les deplacements)
+	 * 
+	 * @return
+	 * 			Nombre aleatoire entre 0 et 4
+	 */
 	public int choixAleatoire(){
 		
 		return (int) (Math.random()*4);
 		
 	}
 	
+	
+	/**
+	 * Methode retournant les caracteristiques d'un personnage
+	 */
 	public abstract String toString();
 	
 }
