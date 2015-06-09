@@ -30,13 +30,13 @@ public class TestsDeplacementAleatoireMonstre {
 		Orc t = (Orc) mj.getPj(1);
 		Commande c = new Commande();
 		c.haut = true;
-		int posXInit = t.x;
-		int posYInit = t.y;
+		int posXInit = t.getX();
+		int posYInit = t.getY();
 		boolean deplacement = false;
 		
 		//Methode testee
 		mj.evoluer(c);
-		deplacement = ((t.x != posXInit) || (t.y != posYInit));
+		deplacement = ((t.getX() != posXInit) || (t.getY() != posYInit));
 		
 		//Validation des resultats
 		assertTrue("Le monstre devrait avoir change de position", deplacement);
@@ -59,13 +59,13 @@ public class TestsDeplacementAleatoireMonstre {
 		//VERIFIER LE TEST LORSQUE LE MONSTRE POURRA FRAPPER PAR EXEMPLE
 		
 		/*c.frapper = true;*/
-		int posXInit = t.x;
-		int posYInit = t.y;
+		int posXInit = t.getX();
+		int posYInit = t.getY();
 		boolean deplacement = false;
 		
 		//Methode testee
 		mj.evoluer(c);
-		deplacement = ((t.x != posXInit) || (t.y != posYInit));
+		deplacement = ((t.getX() != posXInit) || (t.getY() != posYInit));
 		
 		//Validation des resultats
 		assertTrue("Le monstre devrait avoir change de position", deplacement);
@@ -92,7 +92,7 @@ public class TestsDeplacementAleatoireMonstre {
 			//Methode testee
 			mj.evoluer(c);
 			
-			if((f.x < 0) || (f.x > MonJeu.TAILLE_PLATEAU-1) || (f.y < 0) || (f.y > MonJeu.TAILLE_PLATEAU-1)) {
+			if((f.getX() < 0) || (f.getX() > MonJeu.TAILLE_PLATEAU-1) || (f.getY() < 0) || (f.getY() > MonJeu.TAILLE_PLATEAU-1)) {
 				dansLabyrinthe = false;
 			}
 			
@@ -129,7 +129,7 @@ public class TestsDeplacementAleatoireMonstre {
 				
 				for (int k=0; k < tab_cases[j].length; k++) {
 					
-					if(!tab_cases[t.x][t.y].estFranchissable()) {
+					if(!tab_cases[t.getX()][t.getY()].estFranchissable()) {
 						surMur = true;
 					}
 					
@@ -137,7 +137,7 @@ public class TestsDeplacementAleatoireMonstre {
 				
 			}
 			
-			if((t.x < 0) || (t.x > MonJeu.TAILLE_PLATEAU-1) || (t.y < 0) || (t.y > MonJeu.TAILLE_PLATEAU-1) || (surMur)) {
+			if((t.getX() < 0) || (t.getX() > MonJeu.TAILLE_PLATEAU-1) || (t.getY() < 0) || (t.getY() > MonJeu.TAILLE_PLATEAU-1) || (surMur)) {
 				dansLabyrinthe = false;
 			}
 			
@@ -191,7 +191,7 @@ public class TestsDeplacementAleatoireMonstre {
 			//Methode testee
 			mj.evoluer(c);
 			
-			if((t.x == p.x) && (t.y == p.y)) {
+			if((t.getX() == p.getX()) && (t.getY() == p.getY())) {
 				memePosition = true;
 			}
 			
@@ -223,7 +223,7 @@ public class TestsDeplacementAleatoireMonstre {
 			//Methode testee
 			mj.evoluer(c);
 			
-			if((t1.x == t2.x) && (t1.y == t2.y)) {
+			if((t1.getX() == t2.getX()) && (t1.getY() == t2.getY())) {
 				memePosition = true;
 			}
 			
@@ -249,11 +249,11 @@ public class TestsDeplacementAleatoireMonstre {
 		Commande c = new Commande();
 		c.haut = true;
 		
-		int posXInitM1 = t1.x;
-		int posYInitM1 = t1.y;
+		int posXInitM1 = t1.getX();
+		int posYInitM1 = t1.getX();
 		
-		int posXInitM2 = t2.x;
-		int posYInitM2 = t2.y;
+		int posXInitM2 = t2.getY();
+		int posYInitM2 = t2.getY();
 		
 		boolean deplacementM1 = false;
 		boolean deplacementM2 = false;
@@ -261,8 +261,8 @@ public class TestsDeplacementAleatoireMonstre {
 		//Methode testee
 		mj.evoluer(c);
 		
-		deplacementM1 = ((t1.x != posXInitM1) || (t1.y != posYInitM1));
-		deplacementM2 = ((t2.x != posXInitM2) || (t2.y != posYInitM2));
+		deplacementM1 = ((t1.getX() != posXInitM1) || (t1.getY() != posYInitM1));
+		deplacementM2 = ((t2.getX() != posXInitM2) || (t2.getY() != posYInitM2));
 		
 		//Validation des resultats
 		assertTrue("Le monstre 1 devrait avoir change de position", deplacementM1);
