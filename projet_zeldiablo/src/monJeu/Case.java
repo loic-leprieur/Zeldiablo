@@ -6,7 +6,7 @@ public class Case {
 	 * Attribut representant la franchissabilite d'une case
 	 */
 	
-	private boolean franchissable;
+	private boolean franchissable, occupee;
 	
 	
 	
@@ -60,6 +60,18 @@ public class Case {
 	}
 	
 	
+	
+	
+	public boolean estOccupee() {
+		return occupee;
+	}
+
+
+	public void setOccupee(boolean occupee) {
+		this.occupee = occupee;
+	}
+
+
 	/**
 	 * Methode qui permet de renvoyer le type d'une case
 	 * 
