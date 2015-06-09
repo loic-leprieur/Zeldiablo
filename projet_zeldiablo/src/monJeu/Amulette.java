@@ -47,15 +47,30 @@ public class Amulette extends Objet {
 	@Override
 	public void dessinerObjet(BufferedImage im) {
 		
-		if(this.porteur == null){
-		
+		int x_amu = 1;
+		int y_amu = 1;
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		int taille_c = DessinMonJeu.TAILLE_CASE;
-		
 		crayon.setColor(Color.YELLOW);
-		crayon.fillRect((getX()* taille_c) + 5, (getY() * taille_c) + 5, (taille_c - 10), (taille_c - 10));
 		
+		
+		
+		if(this.porteur == null){
+		
+			x_amu = (getX()* taille_c) + 5;
+			y_amu = (getY() * taille_c) + 5;
+			
+		}else{
+			
+			x_amu = (porteur.getX()* taille_c) + 5;
+			y_amu = (porteur.getY() * taille_c) + 5;
 		}
+	
+		
+		
+		crayon.fillRect(x_amu, y_amu  , (taille_c - 10), (taille_c - 10));
+		
+		
 
 	}
 
