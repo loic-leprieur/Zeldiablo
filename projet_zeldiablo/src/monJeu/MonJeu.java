@@ -164,12 +164,24 @@ public class MonJeu implements Jeu {
 			}
 		}
 	}
+	
+	
 	@Override
+	/**
+	 * Methode permettant de dire que le jeu n'est jamais fini
+	 */
 	public boolean etreFini() {
 		// le jeu n'est jamais fini
 		return false;
 	}
 	
+	
+	/**
+	 * Methode permettant de dessiner l'ensemble des objets du labyrinthe
+	 * 
+	 * @param im
+	 * 			BufferedImage
+	 */
 	public void dessinerObjet(BufferedImage im){
 		
 		
