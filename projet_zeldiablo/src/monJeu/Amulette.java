@@ -16,6 +16,7 @@ public class Amulette extends Declencheur {
 	/**
 	 * 
 	 */
+	
 	@Override
 	public void declencherEffet(Personnage pers) {
 		if(pers instanceof Heros){

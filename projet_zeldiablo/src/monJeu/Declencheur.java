@@ -7,7 +7,10 @@ public abstract class Declencheur extends Case {
 	}
 	
 	
-	public abstract void declencherEffet(Personnage pers);
+	public void declencherEffet(Personnage pers){
+		
+		
+	};
 	
 	
 	public abstract String toString();
