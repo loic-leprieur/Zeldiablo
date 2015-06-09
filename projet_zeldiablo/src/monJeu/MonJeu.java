@@ -129,10 +129,7 @@ public class MonJeu implements Jeu {
 				}
 			}
 			//test gestion de l'appui sur deux touches a la fois
-			if(pj.get(i).x==0 || pj.get(i).x==tab_cases.length-1)
-				pj.get(i).x=posX;
-			if(pj.get(i).y==0 || pj.get(i).y==tab_cases.length-1)
-				pj.get(i).y=posY;
+			
 			if(!(tab_cases[pj.get(i).x][pj.get(i).y].estFranchissable())){
 				pj.get(i).x=posX;
 				pj.get(i).y=posY;
