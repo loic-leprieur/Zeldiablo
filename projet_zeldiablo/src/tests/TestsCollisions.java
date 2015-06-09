@@ -26,16 +26,16 @@ public class TestsCollisions {
 		Case[][] tab_cases=jeu.getCases(); //[x]ligne [y]colonne
 		boolean aFranchis=false;
 		int posX, posY;
-		posX=heros.x;
-		posY=heros.y;
+		posX=heros.getX();
+		posY=heros.getY();
 		Case caseDepart=tab_cases[posX][posY];
 		
 		//methode testee
 		Commande allerAdroite = new Commande();
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
-		posX=heros.x;
-		posY=heros.y;
+		posX=heros.getX();
+		posY=heros.getY();
 		
 		Case caseArrivee=tab_cases[posX][posY];
 		
@@ -64,7 +64,7 @@ public class TestsCollisions {
 		Commande allerAdroite = new Commande();
 		allerAdroite.droite=true;
 		jeu.evoluer(allerAdroite);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
+		Case caseArrivee=tab_cases[heros.getX()][heros.getY()];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
@@ -90,7 +90,7 @@ public class TestsCollisions {
 		Commande allerAgauche = new Commande();
 		allerAgauche.gauche=true;
 		jeu.evoluer(allerAgauche);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
+		Case caseArrivee=tab_cases[heros.getX()][heros.getY()];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
@@ -116,7 +116,7 @@ public class TestsCollisions {
 		Commande allerAbas = new Commande();
 		allerAbas.bas=true;
 		jeu.evoluer(allerAbas);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
+		Case caseArrivee=tab_cases[heros.getX()][heros.getY()];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
@@ -142,7 +142,7 @@ public class TestsCollisions {
 		Commande allerAhaut = new Commande();
 		allerAhaut.haut=true;
 		jeu.evoluer(allerAhaut);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
+		Case caseArrivee=tab_cases[heros.getX()][heros.getY()];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
@@ -169,11 +169,11 @@ public class TestsCollisions {
 		allerAhaut.haut=true;
 		Commande allerAgauche = new Commande();
 		allerAgauche.gauche=true;
-		jeu.getPj(0).x=2;
-		jeu.getPj(0).y=1;
+		jeu.getPj(0).setX(2);
+		jeu.getPj(0).setY(1);
 		jeu.evoluer(allerAhaut);
 		jeu.evoluer(allerAgauche);
-		Case caseArrivee=tab_cases[heros.x][heros.y];
+		Case caseArrivee=tab_cases[heros.getX()][heros.getY()];
 		caseArrivee.setFranchissable(false);
 		if(caseArrivee.estFranchissable()){
 			aFranchis=true;
