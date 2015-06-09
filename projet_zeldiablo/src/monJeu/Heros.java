@@ -48,9 +48,10 @@ public class Heros extends Personnage{
 	public void dessinerObjet(BufferedImage im) {
 		
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
 		crayon.setColor(Color.blue);
-		crayon.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE);
+		crayon.fillOval(x * taille_c, y * taille_c, taille_c, taille_c);
 		
 	}
 

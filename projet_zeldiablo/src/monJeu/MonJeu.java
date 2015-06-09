@@ -34,8 +34,7 @@ public class MonJeu implements Jeu {
 		TAILLE_PLATEAU = taille;
 		this.pj=new ArrayList<Personnage>();
 		pj.add(new Heros());
-		//pj.add(new Monstre());
-		//pj.add(new Monstre());
+		pj.add(new Troll());
 		tab_cases = new Case[taille][taille];
 		
 		
