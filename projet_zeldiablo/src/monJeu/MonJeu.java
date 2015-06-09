@@ -99,23 +99,32 @@ public class MonJeu implements Jeu {
 			if(pj.get(i)instanceof Heros){
 				commande=cde;
 			}else{
-				commande = new Commande();
-				choix = pj.get(i).choixAleatoire();
-				switch(choix){
-				case 0:
-					commande.haut=true;
-					break;
-				case 1:
-					commande.bas=true;
-					break;
-				case 2:
-					commande.gauche=true;
-					break;
-				case 3:
-					commande.droite=true;
-					break;
-				default:
+				//test si le mosntre est proche du heros
+				if(-10<=pj.get(i).getX()-pj.get(0).getX() && 10<=pj.get(i).getX()-pj.get(0).getX() 
+				&& -10>=pj.get(i).getY()-pj.get(0).getY() && 10<=pj.get(i).getY()-pj.get(0).getY()){
+			
+					//TODO : dans le cas monstre proche
 					
+				}else{
+					//le monstre est éloigné donc il choisit une direction au hasard
+					commande = new Commande();
+					choix = pj.get(i).choixAleatoire();
+					switch(choix){
+					case 0:
+						commande.haut=true;
+						break;
+					case 1:
+						commande.bas=true;
+						break;
+					case 2:
+						commande.gauche=true;
+						break;
+					case 3:
+						commande.droite=true;
+						break;
+					default:
+					
+					}
 				}
 			}
 			/*
