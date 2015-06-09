@@ -79,7 +79,7 @@ public class TestAmulette {
 		boolean test = (link.getX()==amu.getHeros().getX() && link.getY()==amu.getHeros().getY());
 		//validation des donnees
 		
-		assertEquals("Les coordonnees de l'amulette doivent etre les même que celle de son porteur",true,test);
+		assertEquals("Les coordonnees de l'amulette doivent etre les meme que celle de son porteur",true,test);
 	}
 	
 	
