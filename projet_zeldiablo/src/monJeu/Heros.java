@@ -18,11 +18,11 @@ public class Heros extends Personnage{
 		
 		
 		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
-			this.x = (MonJeu.TAILLE_PLATEAU - 1) / 2;
-			this.y = (MonJeu.TAILLE_PLATEAU - 1) / 2;
+			this.setX((MonJeu.TAILLE_PLATEAU - 1) / 2);
+			this.setY((MonJeu.TAILLE_PLATEAU - 1) / 2);
 		} else {
-			this.x = ((MonJeu.TAILLE_PLATEAU - 1 )/ 2) + 1;
-			this.y = ((MonJeu.TAILLE_PLATEAU - 1) / 2) + 1;
+			this.setX(((MonJeu.TAILLE_PLATEAU - 1 )/ 2) + 1);
+			this.setY(((MonJeu.TAILLE_PLATEAU - 1) / 2) + 1);
 		}
 		
 	}
@@ -36,7 +36,7 @@ public class Heros extends Personnage{
 	 * 			Chaine de caracteres decrivant le heros
 	 */
 	public String toString() {
-		return ("Heros:x=" + x + ",y=" + y);
+		return ("Heros:x=" + getX() + ",y=" + getY());
 	}
 
 
@@ -51,7 +51,7 @@ public class Heros extends Personnage{
 		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
 		crayon.setColor(Color.blue);
-		crayon.fillOval(x * taille_c, y * taille_c, taille_c, taille_c);
+		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
 		
 	}
 

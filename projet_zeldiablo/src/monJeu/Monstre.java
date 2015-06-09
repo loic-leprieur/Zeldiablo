@@ -16,8 +16,8 @@ public abstract class Monstre extends Personnage {
 	 */
 	public Monstre(){
 		
-		this.x = 3;
-		this.y = 3;
+		this.setX(3);
+		this.setX(3);
 	
 		
 	}
@@ -32,7 +32,7 @@ public abstract class Monstre extends Personnage {
 	 */
 	public String toString() {
 		
-		return ("Monstre:x=" + x + ",y=" + y);
+		return ("Monstre:x=" + getX() + ",y=" + getY());
 	}
 	
 

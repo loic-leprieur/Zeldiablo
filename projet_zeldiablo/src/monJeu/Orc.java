@@ -32,7 +32,7 @@ public class Orc extends Monstre {
 		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
 		crayon.setColor(Color.RED);
-		crayon.fillOval(x * taille_c, y * taille_c, taille_c, taille_c);
+		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
 
 	}
 
