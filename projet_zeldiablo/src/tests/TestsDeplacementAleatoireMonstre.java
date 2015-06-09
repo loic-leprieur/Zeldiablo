@@ -213,7 +213,7 @@ public class TestsDeplacementAleatoireMonstre {
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
 		Orc t1 = (Orc) mj.getPj(1);
-		Orc t2 = (Orc) mj.getPj(2);
+		Fantome t2 = (Fantome) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
 		boolean memePosition = false;
@@ -245,7 +245,7 @@ public class TestsDeplacementAleatoireMonstre {
 		//Preparation des donnees
 		MonJeu mj = new MonJeu(31);
 		Orc t1 = (Orc) mj.getPj(1);
-		Orc t2 = (Orc) mj.getPj(2);
+		Fantome t2 = (Fantome) mj.getPj(2);
 		Commande c = new Commande();
 		c.haut = true;
 		
