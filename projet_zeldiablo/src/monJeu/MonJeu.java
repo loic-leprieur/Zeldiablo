@@ -1,5 +1,8 @@
 package monJeu;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -143,6 +146,34 @@ public class MonJeu implements Jeu {
 	public boolean etreFini() {
 		// le jeu n'est jamais fini
 		return false;
+	}
+	
+	public void dessinerObjet(BufferedImage im){
+		
+		
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		int taille_c = DessinMonJeu.TAILLE_CASE;
+		
+		for (int i = 0; i < tab_cases.length; i++) {
+
+			for (int j = 0; j < tab_cases.length; j++) {
+
+				if (!(tab_cases[i][j].estFranchissable())) {
+
+					
+					crayon.setColor(Color.gray);
+					crayon.fillRect(i * taille_c, j *  taille_c, taille_c, taille_c);
+				}
+		
+		
+			}
+		}
+		
+		
+		
+		
+		
+		
 	}
 
 	/**
