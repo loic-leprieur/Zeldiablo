@@ -47,8 +47,11 @@ public class Controleur implements KeyListener {
 	 */
 	public void keyPressed(KeyEvent e) {
 
-		switch (e.getKeyChar()) {
+		char com = (char) Character.toLowerCase(e.getKeyCode());
+		
+		switch (com) {
 		// si on appuie sur 'q',commande joueur est gauche
+				
 		case 'q':
 			this.commandeEnCours.gauche = true;
 			this.commandeARetourner.gauche = true;
