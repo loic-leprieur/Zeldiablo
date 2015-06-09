@@ -16,3 +16,7 @@ Fonctionnalités réalisées :
        - 2.1 Génération de monstres immobiles
 
        - 2.2 Déplacement aléatoire des monstres
+
+       - 3.1 Collision avec un monstre
+
+       - 3.2 Fantômes
