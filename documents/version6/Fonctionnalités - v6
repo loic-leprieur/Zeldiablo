@@ -1,1 +1,54 @@
-gr
+Fonctionnalites realisees dans cette version 6 :
+
+
++        - 5.2 Mise en place de l'amulette :
+
++        
+
++                Criteres de validation :
+
++                        
+
++                        + L'amulette ne peut être placée que sur une case vide
+
++                        + Les monstres et le héros peuvent se situer sur la case de l'amulette
+
++                        + L'amulette est affichée dans le jeu sous la forme d'un cercle jaune sur la case vide où elle se trouve
+
++                        
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------
+
++        
+
++        - 5.3 Acquisition de l'amulette :
+
++        
+
++                Criteres de validation :
+
++                
+
++                        + L'amulette n'est plus sur le plateau (et n'est plus affichée)
+
++                        + Le Heros possède l'amulette
+
++                        + Un monstre ne récupère pas l'amulette
+
++						
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------
+
++
+
++        - 5.4 Fin du jeu : victoire du heros :
+
++		
+
++				Criteres de validation :
+
++				
+
++						+ Lorsque le héros possède l'amulette et qu'il retourne à l'entrée du labyrinthe, le jeu s'arrête et un message est affiché dans la console.
+
++						+ Lorsque le héros ne possède pas l'amulette, le jeu ne s'arrête pas même si le héros retourne à l'entrée
