@@ -30,7 +30,7 @@ public class Amulette extends Declencheur {
 	public String toString() {
 		
 		return("type:Amulette");
-	}
+	 }
 	
 	@Override
 	public void dessinerObjet(BufferedImage im){
