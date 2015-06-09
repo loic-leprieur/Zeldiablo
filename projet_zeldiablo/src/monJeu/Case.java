@@ -1,5 +1,9 @@
 package monJeu;
 
+
+/**
+ * Classe modelisant une case
+ */
 public class Case {
 	
 	/**
