@@ -1,5 +1,9 @@
 package monJeu;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
 import moteurJeu.Commande;
 
 /**
@@ -24,9 +28,30 @@ public class Heros extends Personnage{
 	}
 
 
-
+	@Override
+	/**
+	 * Methode retournant les caracteristiques d'un heros
+	 * 
+	 * @return
+	 * 			Chaine de caracteres decrivant le heros
+	 */
 	public String toString() {
 		return ("Heros:x=" + x + ",y=" + y);
+	}
+
+
+
+	@Override
+	/**
+	 * Methode permettant de dessiner un heros dans le labyrinthe
+	 */
+	public void dessinerObjet(BufferedImage im) {
+		
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		
+		crayon.setColor(Color.blue);
+		crayon.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE);
+		
 	}
 
 }
