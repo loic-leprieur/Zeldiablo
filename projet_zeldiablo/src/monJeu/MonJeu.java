@@ -208,7 +208,11 @@ public class MonJeu implements Jeu {
 		for(int i = 0; i < pj.size(); i++){
 			
 			
-			pj.get(i).dessinerObjet(im);			
+			pj.get(i).dessinerObjet(im);
+			
+			for(int j =0; j<obj.size();j++){
+				obj.get(j).dessinerObjet(im);
+			}
 			
 		}
 		
