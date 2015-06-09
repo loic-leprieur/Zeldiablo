@@ -12,10 +12,7 @@ public class Amulette extends Declencheur {
 		super(posX, posY, etat);
 		estAffiche=true;
 	}
-	
-	/**
-	 * 
-	 */
+
 	
 	@Override
 	public void declencherEffet(Personnage pers) {
