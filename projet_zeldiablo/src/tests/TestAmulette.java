@@ -9,7 +9,7 @@ import org.junit.*;
 public class TestAmulette {
 
 	@Test
-	public void testCoordonnéesInitialeAmulette(){
+	public void testCoordonneesInitialeAmulette(){
 		//preparation des donnees
 		MonJeu mj = new MonJeu(31);
 		Amulette amu = (Amulette) mj.getObjet(0);
@@ -18,8 +18,8 @@ public class TestAmulette {
 		int x= amu.getX();
 		int y= amu.getY();
 		//validation des donnees
-		assertEquals("Doit retourner la coordonnée x initiale 29 de l'amulette",29,x);
-		assertEquals("Doit retourner la coordonnée y initiale 29 de l'amulette",29,y);
+		assertEquals("Doit retourner la coordonnee x initiale 29 de l'amulette",29,x);
+		assertEquals("Doit retourner la coordonnee y initiale 29 de l'amulette",29,y);
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class TestAmulette {
 		boolean test = (link.getX()==amu.getHeros().getX() && link.getY()==amu.getHeros().getY());
 		//validation des donnees
 		
-		assertEquals("Les coordonnées de l'amulette doivent être les même que celle de son porteur",true,test);
+		assertEquals("Les coordonnees de l'amulette doivent etre les même que celle de son porteur",true,test);
 	}
 	
 	
