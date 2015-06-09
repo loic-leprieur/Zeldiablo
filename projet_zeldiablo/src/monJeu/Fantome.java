@@ -46,7 +46,7 @@ public class Fantome extends Monstre {
 	 */
 	public boolean verifierCase(Case c){
 		
-		return (c.estOccupee());
+		return (!c.estOccupee());
 		
 	}
 
