@@ -18,7 +18,7 @@ public class Case {
 	 * Attribut representant la franchissabilite d'une case et si elle est occupee
 	 */
 	
-	private boolean franchissable, occupee;
+	protected boolean franchissable, occupee;
 	
 	
 	
