@@ -167,6 +167,19 @@ public class MonJeu implements Jeu {
 				pj.get(i).setY(posY);
 			}
 		}
+		
+		
+		
+		////////// A REFAIRE CAR MAL OPTIMISE ///////////////////////////:::
+		
+		if(pj.get(0).getX()==obj.get(0).getX() && pj.get(0).getY()==obj.get(0).getY()){
+			
+			Amulette amu = (Amulette) obj.get(0);
+			
+			amu.setHeros( (Heros) pj.get(0)); 
+			
+			
+		}
 	}
 	
 	

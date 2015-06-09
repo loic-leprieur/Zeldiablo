@@ -64,6 +64,8 @@ public class Amulette extends Objet {
 			
 			x_amu = (porteur.getX()* taille_c) + 5;
 			y_amu = (porteur.getY() * taille_c) + 5;
+			setX(porteur.getX());
+			setY(porteur.getY());
 		}
 	
 		
