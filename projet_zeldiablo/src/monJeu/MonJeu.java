@@ -58,6 +58,14 @@ public class MonJeu implements Jeu {
 
 		}
 		
+		for(int k=0; k<pj.size();k++){
+			Personnage perso=pj.get(k);
+			tab_cases[perso.getX()][perso.getY()].setOccupee(true);
+			
+		}
+		
+		
+		
 	}
 
 	/**
