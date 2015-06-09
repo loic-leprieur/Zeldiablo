@@ -3,10 +3,10 @@ package monJeu;
 public class Case {
 	
 	/**
-	 * Attribut representant la franchissabilite d'une case
+	 * Attribut representant la franchissabilite d'une case et si elle est occupee
 	 */
 	
-	private boolean franchissable;
+	private boolean franchissable, occupee;
 	
 	
 	
@@ -60,6 +60,24 @@ public class Case {
 	}
 	
 	
+	
+	/**
+	 * Retourne vrai si la case verifiee est occupee
+	 * @return boolean
+	 */
+	public boolean estOccupee() {
+		return occupee;
+	}
+
+	/**
+	 * modifie l occupation de la case 
+	 * @param occupee
+	 */
+	public void setOccupee(boolean occupee) {
+		this.occupee = occupee;
+	}
+
+
 	/**
 	 * Methode qui permet de renvoyer le type d'une case
 	 * 
