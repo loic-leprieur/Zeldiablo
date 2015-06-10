@@ -61,7 +61,35 @@ public class MonJeu implements Jeu {
 		
 		tab_cases[29][29] = new Amulette(29, 29, true);
 		tab_cases[1][1] = new Porte(1,1,true);
-		tab_cases[1][2] = new Piege(1, 2, true);
+		
+		int nb_pieges = 0;
+		
+		
+		while (nb_pieges < 5){
+			
+			
+			int x = (int) (Math.random()*30);
+			int y = (int) (Math.random()*30);
+			Heros h = (Heros) pj.get(0);
+			
+			
+			int distance_h = (int) Math.sqrt(Math.pow(x - h.getX(), 2)+ Math.pow(y - h.getY(), 2));
+	
+			if(tab_cases[x][y].estFranchissable() && distance_h > 5){
+				
+				
+				tab_cases[x][y] = new Piege(x, y, true);
+				nb_pieges++;
+			
+				
+			}
+			
+			
+			
+			
+		}
+
+		
 		for(int k=0; k<pj.size();k++){
 			Personnage perso=pj.get(k);
 			tab_cases[perso.getX()][perso.getY()].setOccupee(true);
