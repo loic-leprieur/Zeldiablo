@@ -11,10 +11,7 @@ public class Commande {
 	/**
 	 * boolean representant la commande de l'utilisateur
 	 */
-	public boolean gauche;
-	public boolean droite;
-	public boolean haut;
-	public boolean bas;
+	public boolean gauche, droite, haut, bas, attaque;
 
 	public Commande()
 	{
