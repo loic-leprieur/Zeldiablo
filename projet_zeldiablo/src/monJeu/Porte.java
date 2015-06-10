@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import javax.swing.JOptionPane;
+
 public class Porte extends Declencheur{
 
 	public Porte(int posX, int posY, boolean etat) {
@@ -13,7 +15,9 @@ public class Porte extends Declencheur{
 	@Override
 	public void declencherEffet(Personnage pers) {
 		if(((Heros)pers).isPossedeAmu()){
-			//TODO temporaire 
+			
+			JOptionPane.showMessageDialog(null, "Vous avez gagné !", "Victoire", JOptionPane.INFORMATION_MESSAGE);
+			
 			System.exit(0);
 		}
 	}

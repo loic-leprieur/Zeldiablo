@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
@@ -336,6 +338,8 @@ public class MonJeu implements Jeu {
 		// le jeu n'est jamais fini
 
 		if (pj.get(0).estMort()) {
+			
+			JOptionPane.showMessageDialog(null, "Vous êtes mort !", "Mort", JOptionPane.INFORMATION_MESSAGE);
 
 			return true;
 		}
