@@ -19,7 +19,7 @@ public class TestsHeros {
 	public void TestPositionInitiale(){
 		
 		//Preparation des donnees
-		Heros zelda = new Heros();
+		Heros zelda = new Heros(24,3);
 		zelda.setX(4);
 		zelda.setY(4);
 		
@@ -38,7 +38,7 @@ public class TestsHeros {
 	public void TestDeplacementGauche(){
 		
 		//Preparation des donnees
-		Heros zelda = new Heros();
+		Heros zelda = new Heros(24,3);
 		Commande c = new Commande();
 		c.gauche = true;
 		zelda.setX(4);
@@ -61,7 +61,7 @@ public class TestsHeros {
 		
 		//Preparation des donnees
 		MonJeu.TAILLE_PLATEAU = 10;
-		Heros zelda = new Heros();
+		Heros zelda = new Heros(24,3);
 		Commande c = new Commande();
 		c.droite = true;
 		zelda.setX(4);
@@ -84,7 +84,7 @@ public class TestsHeros {
 	public void TestDeplacementHaut(){
 		
 		//Preparation des donnees
-		Heros zelda = new Heros();
+		Heros zelda = new Heros(24,3);
 		Commande c = new Commande();
 		c.haut = true;
 		zelda.setX(4);
@@ -106,7 +106,7 @@ public class TestsHeros {
 		
 		//Preparation des donnees
 		MonJeu.TAILLE_PLATEAU = 10;
-		Heros zelda = new Heros();
+		Heros zelda = new Heros(24,3);
 		Commande c = new Commande();
 		c.bas = true;
 		zelda.setX(4);
