@@ -16,7 +16,7 @@ public class Porte extends Declencheur{
 	public void declencherEffet(Personnage pers) {
 		if(((Heros)pers).isPossedeAmu()){
 			
-			JOptionPane.showMessageDialog(null, "Vous avez gagné !", "Victoire", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Vous avez gagne !", "Victoire", JOptionPane.INFORMATION_MESSAGE);
 			
 			System.exit(0);
 		}
