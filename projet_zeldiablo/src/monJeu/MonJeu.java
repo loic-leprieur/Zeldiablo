@@ -339,7 +339,7 @@ public class MonJeu implements Jeu {
 
 		if (pj.get(0).estMort()) {
 			
-			JOptionPane.showMessageDialog(null, "Vous êtes mort !", "Mort", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Vous etes mort !", "Mort", JOptionPane.INFORMATION_MESSAGE);
 
 			return true;
 		}
