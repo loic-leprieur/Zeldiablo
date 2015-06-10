@@ -3,6 +3,10 @@ package monJeu;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -37,25 +41,34 @@ public class MonJeu implements Jeu {
 		pj.add(new Fantome());
 		tab_cases = new Case[taille][taille];
 
-		for (int i = 0; i < taille; i++) {
-
-			for (int j = 0; j < taille; j++) {
-
-				// Condition pour un premier exemple d'affichage des cases
-				if (((i % 2 == 0) && (j % 2 == 0)) || (i == 0)
-						|| (i == tab_cases.length - 1) || (j == 0)
-						|| (j == tab_cases[i].length - 1)) {
-
-					tab_cases[i][j] = new Case(i, j, false);
-
-				} else {
-
-					tab_cases[i][j] = new Case(i, j, true);
-
+		FileReader fis;
+		
+		try {
+			
+			fis = new FileReader("Labyrinthe.txt");
+			BufferedReader br = new BufferedReader(fis);
+			
+			for(int i = 0; i < taille; i++){
+				
+				String ligne = br.readLine();
+				String[] tab_ligne = ligne.split(" ");
+				
+				for(int j = 0; j < tab_ligne.length; j++) {
+					
+					if(tab_ligne[j].equals("X")) {
+						tab_cases[j][i] = new Case(j,i,false);
+					} else {
+						tab_cases[j][i] = new Case(j,i,true);
+					}
 				}
-
 			}
-
+			
+			br.close();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 		int nb_pieges = 0;
