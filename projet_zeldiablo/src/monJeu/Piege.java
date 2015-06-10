@@ -14,6 +14,7 @@ public class Piege extends Declencheur {
 	public Piege(int posX, int posY, boolean etat) {
 		super(posX, posY, etat);
 		estActive = false;
+		
 	}
 
 	
@@ -22,11 +23,12 @@ public class Piege extends Declencheur {
 		
 	@Override
 	public void declencherEffet(Personnage pers){
-					
-		pers.setPv(pers.getPv() - 10);
-		estActive = true;
+
+			
+			pers.setPv(pers.getPv() - 10);
+			estActive = true;
 		
-		};
+	}
 		
 		
 
