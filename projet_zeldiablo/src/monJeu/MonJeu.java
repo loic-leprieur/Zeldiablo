@@ -58,10 +58,6 @@ public class MonJeu implements Jeu {
 
 		}
 		
-		
-		tab_cases[29][29] = new Amulette(29, 29, true);
-		tab_cases[1][1] = new Porte(1,1,true);
-		
 		int nb_pieges = 0;
 		
 		
@@ -83,11 +79,13 @@ public class MonJeu implements Jeu {
 			
 				
 			}
-			
-			
-			
-			
+
 		}
+		
+		
+		
+		tab_cases[29][29] = new Amulette(29, 29, true);
+		tab_cases[1][1] = new Porte(1,1,true);
 
 		
 		for(int k=0; k<pj.size();k++){
