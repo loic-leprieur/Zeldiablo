@@ -131,8 +131,8 @@ public class MonJeu implements Jeu {
 				commande=cde;
 			}else{
 				//test si le mosntre est proche du heros
-				if(-10<=pj.get(i).getX()-pj.get(0).getX() && 10>=pj.get(i).getX()-pj.get(0).getX() 
-				&& -10<=pj.get(i).getY()-pj.get(0).getY() && 10>=pj.get(i).getY()-pj.get(0).getY()){
+				if(-6<=pj.get(i).getX()-pj.get(0).getX() && 6>=pj.get(i).getX()-pj.get(0).getX() 
+				&& -6<=pj.get(i).getY()-pj.get(0).getY() && 6>=pj.get(i).getY()-pj.get(0).getY()){
 					
 		
 					Heros h = (Heros) pj.get(0);
