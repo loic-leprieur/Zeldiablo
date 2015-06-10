@@ -17,6 +17,8 @@ Fonctionnalités réalisées :
 
        - 2.2 Déplacement aléatoire des monstres
 
+       - 2.3 Monstres attirés par le héros
+
        - 3.1 Collision avec un monstre
 
        - 3.2 Fantômes
@@ -27,4 +29,8 @@ Fonctionnalités réalisées :
 
        - 5.4 Fin du jeu
 
-       - 2.3 Monstres attirés par le héros
+       - 4.1 Attaque des monstres
+
+       - 4.2 Attaque du joueur
+
+       - 1.5 Cases piégées
