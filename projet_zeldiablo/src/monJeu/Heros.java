@@ -55,7 +55,12 @@ public class Heros extends Personnage{
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
-		crayon.setColor(Color.blue);
+		if(attaque) {
+			crayon.setColor(Color.BLUE);
+		} else {
+			crayon.setColor(Color.CYAN);
+		}
+		
 		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
 		
 		crayon.setColor(Color.BLACK);
