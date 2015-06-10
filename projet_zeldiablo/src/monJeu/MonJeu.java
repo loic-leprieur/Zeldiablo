@@ -93,7 +93,7 @@ public class MonJeu implements Jeu {
 		}
 
 		tab_cases[29][29] = new Amulette(29, 29, true);
-		tab_cases[1][1] = new Porte(29, 1, true);
+		tab_cases[29][1] = new Porte(29, 1, true);
 
 		for (int k = 0; k < pj.size(); k++) {
 			Personnage perso = pj.get(k);
