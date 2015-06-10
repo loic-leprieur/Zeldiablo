@@ -91,7 +91,13 @@ public class Case {
 		this.occupee = occupee;
 	}
 	
-	
+	/**
+	 * dessin d'une case par defaut
+	 * qui si elle n'est pas franchissable
+	 * se dessine comme un mur
+	 * 
+	 * @param im
+	 */
 	public void dessinerObjet(BufferedImage im){
 		
 		Graphics2D crayon = (Graphics2D) im.getGraphics();

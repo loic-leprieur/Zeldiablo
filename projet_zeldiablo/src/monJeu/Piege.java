@@ -10,7 +10,13 @@ public class Piege extends Declencheur {
 	private boolean estActive, estDessus;
 	
 	
-
+	/**
+	 * constructeur de pieges
+	 * invisibles et inactif
+	 * @param posX
+	 * @param posY
+	 * @param etat
+	 */
 	public Piege(int posX, int posY, boolean etat) {
 		super(posX, posY, etat);
 		estActive = false;
@@ -21,7 +27,9 @@ public class Piege extends Declencheur {
 	
 	
 	
-		
+	/**
+	 * active l'effet du piege sur le personnage	
+	 */
 	@Override
 	public void declencherEffet(Personnage pers){
 
@@ -38,7 +46,9 @@ public class Piege extends Declencheur {
 	}
 		
 		
-
+		/**
+		 * dessine le piege seulement si il a ete active
+		 */
 		public void dessinerObjet(BufferedImage im){
 			
 			if(estActive){

@@ -70,6 +70,12 @@ public abstract class Personnage {
 		
 	}
 	
+	/**
+	 * factorisation de l'occupation et 
+	 * de franchissable d'une case
+	 * @param c
+	 * @return si la case est franchissable et non occupee
+	 */
 	public boolean verifierCase(Case c){
 		if(c.estFranchissable() && !(c.estOccupee()) ){
 			return true;
@@ -170,7 +176,14 @@ public abstract class Personnage {
 			return false;
 		}
 	}
-		
+	
+	/**
+	 * activation de l'attaque d'un personnage
+	 * sur une victime qui perd ses points de vie
+	 * en fonction de la puissance du personnage attaquant
+	 * 
+	 * @param victime
+	 */
 	public void attaque(Personnage victime){
 		attaque=true;
 		

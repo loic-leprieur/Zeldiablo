@@ -13,7 +13,10 @@ public class Amulette extends Declencheur {
 		estAffiche=true;
 	}
 
-	
+	/**
+	 * lorsque un heros active une case amulette
+	 * il la possede et elle ne s'affiche plus
+	 */
 	@Override
 	public void declencherEffet(Personnage pers) {
 		if(pers instanceof Heros){
@@ -22,13 +25,22 @@ public class Amulette extends Declencheur {
 		}
 		
 	}
-
+	
+	/**
+	 * affichage du type de 
+	 * la classe
+	 */
 	@Override
 	public String toString() {
 		
 		return("type:Amulette");
 	 }
 	
+	/**
+	 * dessin specifique a amulette
+	 * qui n'est dessinee que lorsqu'elle
+	 * est affichee
+	 */
 	@Override
 	public void dessinerObjet(BufferedImage im){
 		if(estAffiche){
