@@ -17,20 +17,15 @@ public class Heros extends Personnage{
 	/**
 	 * constructeur vide
 	 */
-	public Heros() {
+	public Heros(int posX, int posY) {
 		
 		this.pv = 100;
 		this.possedeAmu = false;
 		this.puissance=5;
 		this.attaque=false;
+		this.x = posX;
+		this.y = posY;
 		
-		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
-			this.setX((MonJeu.TAILLE_PLATEAU - 1) / 2);
-			this.setY((MonJeu.TAILLE_PLATEAU - 1) / 2);
-		} else {
-			this.setX(((MonJeu.TAILLE_PLATEAU - 1 )/ 2) + 1);
-			this.setY(((MonJeu.TAILLE_PLATEAU - 1) / 2) + 1);
-		}
 		
 	}
 

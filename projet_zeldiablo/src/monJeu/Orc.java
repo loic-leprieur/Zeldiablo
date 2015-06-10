@@ -14,8 +14,8 @@ public class Orc extends Monstre {
 	/**
 	 * Constructeur d'un orc
 	 */
-	public Orc() {
-		super();
+	public Orc(int posX, int posY) {
+		super(posX, posY);
 	}
 
 	

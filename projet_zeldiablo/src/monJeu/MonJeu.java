@@ -36,9 +36,10 @@ public class MonJeu implements Jeu {
 
 		TAILLE_PLATEAU = taille;
 		this.pj = new ArrayList<Personnage>();
-		pj.add(new Heros());
-		pj.add(new Orc());
-		pj.add(new Fantome());
+		pj.add(new Heros(24,3));
+		pj.add(new Orc(9,14));
+		pj.add(new Orc(2,27));
+		pj.add(new Fantome(27, 28));
 		tab_cases = new Case[taille][taille];
 
 		FileReader fis;
@@ -92,7 +93,7 @@ public class MonJeu implements Jeu {
 		}
 
 		tab_cases[29][29] = new Amulette(29, 29, true);
-		tab_cases[1][1] = new Porte(1, 1, true);
+		tab_cases[1][1] = new Porte(29, 1, true);
 
 		for (int k = 0; k < pj.size(); k++) {
 			Personnage perso = pj.get(k);

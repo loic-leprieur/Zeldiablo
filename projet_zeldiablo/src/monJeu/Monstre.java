@@ -14,13 +14,15 @@ public abstract class Monstre extends Personnage {
 	/**
 	 * Constructeur d'un monstre
 	 */
-	public Monstre(){
+	public Monstre(int posX, int posY){
 		
 		this.pv = 50;
 		this.setX(3);  
 		this.setY(3);
 		this.puissance=5;
 		this.attaque=false;
+		this.x = posX;
+		this.y = posY;
 	
 		
 	}
