@@ -36,12 +36,7 @@ public class MonJeu implements Jeu {
 
 		TAILLE_PLATEAU = taille;
 		this.pj = new ArrayList<Personnage>();
-		pj.add(new Heros(24,3));
-		pj.add(new Orc(9,14));
-		pj.add(new Orc(2,27));
-		pj.add(new Fantome(27, 28));
 		tab_cases = new Case[taille][taille];
-
 		FileReader fis;
 		
 		try {
@@ -56,11 +51,35 @@ public class MonJeu implements Jeu {
 				
 				for(int j = 0; j < tab_ligne.length; j++) {
 					
-					if(tab_ligne[j].equals("X")) {
+					switch(tab_ligne[j]){
+					
+					case "X":
 						tab_cases[j][i] = new Case(j,i,false);
-					} else {
+						break;
+						
+					case "-":
 						tab_cases[j][i] = new Case(j,i,true);
+						break;
+						
+					case "H":
+						pj.add(new Heros(j,i));
+						tab_cases[j][i] = new Case(j,i,true);
+						break;
+						
+					case "O":
+						pj.add(new Orc(j,i));
+						tab_cases[j][i] = new Case(j,i,true);
+						break;
+						
+					case "F":
+						pj.add(new Fantome(j,i));
+						tab_cases[j][i] = new Case(j,i,true);
+						break;
+					
+					
+					
 					}
+					
 				}
 			}
 			

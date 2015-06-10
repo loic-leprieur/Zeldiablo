@@ -1,6 +1,6 @@
 X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X
 X - - - - - X X - - - - - - - - - - - - X X - - - - - - - - X
-X - - - - - X X - - - - X X - - - - - - X X - - - - - - - - X
+X - - - - - X X - - - - X X - - - - - - X X - - - - H - - - X
 X - - - - - X X - - - - X X - - - - - - X X - - - - - - - - X
 X - - - - - - - - - - - X X - - - - - - - - - - - - - - - - X
 X - - X X X X X X X X X X X X X X X X X X X X X X - X X X X X
@@ -14,7 +14,7 @@ X - - - - - X X X X X X X X X X X X X X X X X X - - X X X X X
 X - - - - - X X - - - - X X - - - - - - - - - - - - - - - - X
 X - - - - - X X - - - - X X - - - - - - - - - - - - - - - - X
 X - - - - - X X - - - - X X - - - - - - - - - - - - - - - - X
-X - - - - - X X - - - - X X - - - - - X X X - X X X - - - - X
+X - - - - - X X - - O - X X - - - - - X X X - X X X - - - - X
 X - X X X X X X - - - - X X X X X X - X X X - X X X - - - - X
 X - X X X X X X - - - - X X X X X X - X X X - X X X - - - - X
 X - - - - - X X - - - - X X - - - - - X X X - X X X - - - - X
@@ -25,7 +25,7 @@ X X X X X - X X - X X - X X - X X X X X X X X X X X X X X X X
 X X X X X - X X - X X - X X - X X X X X X X X X X X X X X X X
 X - - - - - X X - - - - X X - - - - - - - - - - - - - - - - X
 X - - - - - X X - - - - X X - - - - - - X X - - - - - - - - X
-X - - - - - - - - - - - - - - - - - - - X X - - - - - - - - X
+X - - O - - - - - - - - - - - - - - - - X X - - - F - - - - X
 X - - - - - X X - - - - - - - - - - - - X X - - - - - - - - X
 X - - - - - X X - - - - - - - - - - - - X X - - - - - - - - X
 X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X
