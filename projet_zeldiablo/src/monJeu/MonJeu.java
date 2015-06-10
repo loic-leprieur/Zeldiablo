@@ -215,7 +215,6 @@ public class MonJeu implements Jeu {
 					for(int j=1;j<pj.size();j++){
 						if(-1<=pj.get(j).getX()-pj.get(i).getX() && 1>=pj.get(j).getX()-pj.get(i).getX() && -1<=pj.get(j).getY()-pj.get(i).getY() && 1>=pj.get(j).getY()-pj.get(i).getY()){
 							pj.get(i).attaque(pj.get(j));
-							System.out.println("Attaque");
 						}
 					}
 				}else{
