@@ -29,7 +29,12 @@ public class Fantome extends Monstre {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		int taille_c = DessinMonJeu.TAILLE_CASE;
 		
-		crayon.setColor(Color.green);
+		if(attaque) {
+			crayon.setColor(Color.GREEN);
+		} else {
+			crayon.setColor(Color.BLACK);
+		}
+		
 		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
 		
 		crayon.setColor(Color.BLACK);
