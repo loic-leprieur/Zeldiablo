@@ -148,6 +148,21 @@ public abstract class Personnage {
 	}
 
 
+	public boolean estMort(){
+		
+		if(pv <= 0){
+			pv = 0;
+			return true;
+			
+		}else{
+			
+			return false;
+		}
+		
+		
+	}
+	
+	
 	/**
 	 * Methode retournant les caracteristiques d'un personnage
 	 */

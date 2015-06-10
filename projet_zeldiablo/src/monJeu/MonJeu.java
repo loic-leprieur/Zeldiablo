@@ -34,8 +34,8 @@ public class MonJeu implements Jeu {
 		TAILLE_PLATEAU = taille;
 		this.pj=new ArrayList<Personnage>();
 		pj.add(new Heros());
-		pj.add(new Orc());
-		pj.add(new Fantome());
+	//	pj.add(new Orc());
+		//pj.add(new Fantome());
 		tab_cases = new Case[taille][taille];
 		
 		
@@ -61,6 +61,7 @@ public class MonJeu implements Jeu {
 		
 		tab_cases[29][29] = new Amulette(29, 29, true);
 		tab_cases[1][1] = new Porte(1,1,true);
+		tab_cases[1][2] = new Piege(1, 2, true);
 		for(int k=0; k<pj.size();k++){
 			Personnage perso=pj.get(k);
 			tab_cases[perso.getX()][perso.getY()].setOccupee(true);
@@ -245,6 +246,12 @@ public class MonJeu implements Jeu {
 	 */
 	public boolean etreFini() {
 		// le jeu n'est jamais fini
+		
+		if(pj.get(0).estMort()){
+			
+			return true;
+		}
+		
 		return false;
 	}
 	
