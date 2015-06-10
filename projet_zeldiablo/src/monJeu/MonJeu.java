@@ -128,72 +128,80 @@ public class MonJeu implements Jeu {
 			if(pj.get(i)instanceof Heros){
 				commande=cde;
 			}else{
-				//test si le mosntre est proche du heros
-				if(-6<=pj.get(i).getX()-pj.get(0).getX() && 6>=pj.get(i).getX()-pj.get(0).getX() 
-				&& -6<=pj.get(i).getY()-pj.get(0).getY() && 6>=pj.get(i).getY()-pj.get(0).getY()){
-					
-		
-					Heros h = (Heros) pj.get(0);
-					Monstre m = (Monstre) pj.get(i);
-					commande = new Commande();
-					
-					if(h.getX() > m.getX()){
-						
-						commande.droite = true;
-						
-						if(h.getY() < m.getY()){
-							
-							commande.haut = true;
-						
-						}else{
-							
-							commande.bas = true;
-							
-						}
-						
-						
-					}else{
-						
-						
-						commande.gauche = true;
-						
-						if(h.getY() < m.getY()){
-							
-							commande.haut = true;
-						
-						}else{
-							
-							commande.bas = true;
-							
-						}
-						
-						
-					}
-					
-					
-					
-					
-					
+				Heros h = (Heros) pj.get(0);
+				Monstre m = (Monstre) pj.get(i);
+				commande = new Commande();
+				
+				//Verifie si le heros est a cote pour le taper
+				if(-1<=m.getX()-h.getX() && 1>=m.getX()-h.getX() && -1<=m.getY()-h.getY() && 1>=m.getY()-h.getY()){
+					commande.attaque=true;
 					
 				}else{
-					//le monstre est �loign� donc il choisit une direction au hasard
-					commande = new Commande();
-					choix = pj.get(i).choixAleatoire();
-					switch(choix){
-					case 0:
-						commande.haut=true;
-						break;
-					case 1:
-						commande.bas=true;
-						break;
-					case 2:
-						commande.gauche=true;
-						break;
-					case 3:
-						commande.droite=true;
-						break;
-					default:
+					//test si le mosntre est proche du heros
+					if(-6<=pj.get(i).getX()-pj.get(0).getX() && 6>=pj.get(i).getX()-pj.get(0).getX() 
+							&& -6<=pj.get(i).getY()-pj.get(0).getY() && 6>=pj.get(i).getY()-pj.get(0).getY()){
 					
+		
+					
+						if(h.getX() > m.getX()){
+						
+							commande.droite = true;
+						
+							if(h.getY() < m.getY()){
+							
+								commande.haut = true;
+						
+							}else{
+							
+								commande.bas = true;
+							
+							}
+						
+						
+						}else{
+						
+						
+							commande.gauche = true;
+						
+							if(h.getY() < m.getY()){
+							
+								commande.haut = true;
+						
+							}else{
+							
+								commande.bas = true;
+							
+							}
+						
+						
+						}
+					
+					
+					
+					
+					
+					}else{
+						//le monstre est �loign� donc il choisit une direction au hasard
+						commande = new Commande();
+						choix = pj.get(i).choixAleatoire();
+						switch(choix){
+						case 0:
+						
+							commande.haut=true;
+					
+							break;
+						case 1:
+							commande.bas=true;
+							break;
+						case 2:
+							commande.gauche=true;
+							break;
+						case 3:
+							commande.droite=true;
+							break;
+						default:
+					
+						}
 					}
 				}
 			}
@@ -202,37 +210,49 @@ public class MonJeu implements Jeu {
 			 * si la case d'arrivee est occupee, le personnage retourne a sa position initiale
 			 * sinon il se deplace sur la case qui devient occupee
 			 */
-			if(commande.haut){				
-				if(posY-1>=0 && posY-1<TAILLE_PLATEAU){
-					if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
-						this.getPj(i).deplacer(commande);
+			if(commande.attaque){
+				if(pj.get(i)instanceof Heros){
+					for(int j=1;j<pj.size();j++){
+						if(-1<=pj.get(j).getX()-pj.get(i).getX() && 1>=pj.get(j).getX()-pj.get(i).getX() && -1<=pj.get(j).getY()-pj.get(i).getY() && 1>=pj.get(j).getY()-pj.get(i).getY()){
+							pj.get(i).attaque(pj.get(j));
+						}
+					}
+				}else{
+					pj.get(i).attaque(pj.get(0));
+				}
+			}else{
+				if(commande.haut){				
+					if(posY-1>=0 && posY-1<TAILLE_PLATEAU){
+						if(this.getPj(i).verifierCase(tab_cases[posX][posY-1]) && !tab_cases[posX][posY-1].estOccupee()){
+							this.getPj(i).deplacer(commande);
 					
 
+						}
 					}
 				}
-			}
-			if(commande.bas){
-				if(posY+1>=0 && posY+1<TAILLE_PLATEAU){
-					if(this.getPj(i).verifierCase(tab_cases[posX][posY+1]) && !tab_cases[posX][posY+1].estOccupee()){
-						this.getPj(i).deplacer(commande);
+				if(commande.bas){
+					if(posY+1>=0 && posY+1<TAILLE_PLATEAU){
+						if(this.getPj(i).verifierCase(tab_cases[posX][posY+1]) && !tab_cases[posX][posY+1].estOccupee()){
+							this.getPj(i).deplacer(commande);
 					
+						}
 					}
 				}
-			}
-			if(commande.gauche){
-				if(posX-1>=0 && posX-1<TAILLE_PLATEAU){
-					if(this.getPj(i).verifierCase(tab_cases[posX-1][posY]) && !tab_cases[posX-1][posY].estOccupee()){
-						this.getPj(i).deplacer(commande);
+				if(commande.gauche){
+					if(posX-1>=0 && posX-1<TAILLE_PLATEAU){
+						if(this.getPj(i).verifierCase(tab_cases[posX-1][posY]) && !tab_cases[posX-1][posY].estOccupee()){
+							this.getPj(i).deplacer(commande);
 					
 
+						}
 					}
 				}
-			}
-			if(commande.droite){
-				if(posX+1>=0 && posX+1<TAILLE_PLATEAU){
-					if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
-						this.getPj(i).deplacer(commande);
+				if(commande.droite){
+					if(posX+1>=0 && posX+1<TAILLE_PLATEAU){
+						if(this.getPj(i).verifierCase(tab_cases[posX+1][posY]) && !tab_cases[posX+1][posY].estOccupee()){
+							this.getPj(i).deplacer(commande);
 					
+						}
 					}
 				}
 			}
