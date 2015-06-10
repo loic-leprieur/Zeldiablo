@@ -34,7 +34,7 @@ public class MonJeu implements Jeu {
 		TAILLE_PLATEAU = taille;
 		this.pj=new ArrayList<Personnage>();
 		pj.add(new Heros());
-	//	pj.add(new Orc());
+		pj.add(new Orc());
 		//pj.add(new Fantome());
 		tab_cases = new Case[taille][taille];
 		
@@ -212,13 +212,9 @@ public class MonJeu implements Jeu {
 			 */
 			if(commande.attaque){
 				if(pj.get(i)instanceof Heros){
-					for(int j=1;j<pj.size();j++){
-						if(-1<=pj.get(j).getX()-pj.get(i).getX() && 1>=pj.get(j).getX()-pj.get(i).getX() && -1<=pj.get(j).getY()-pj.get(i).getY() && 1>=pj.get(j).getY()-pj.get(i).getY()){
-							pj.get(i).attaque(pj.get(j));
-						}
-					}
-				}else{
-					pj.get(i).attaque(pj.get(0));
+					
+					pj.get(0).attaque(pj.get(1));
+			
 				}
 			}else{
 				if(commande.haut){				

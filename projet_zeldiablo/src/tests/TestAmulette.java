@@ -12,75 +12,43 @@ public class TestAmulette {
 	public void testCoordonneesInitialeAmulette(){
 		//preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Amulette amu = (Amulette) mj.getObjet(0);
 		
 		//methode testee
-		int x= amu.getX();
-		int y= amu.getY();
+		Case[][] tab_cas = mj.getCases();
+		
 		//validation des donnees
-		assertEquals("Doit retourner la coordonnee x initiale 29 de l'amulette",29,x);
-		assertEquals("Doit retourner la coordonnee y initiale 29 de l'amulette",29,y);
-	}
+		assertEquals("Doit retourner la coordonnee x initiale 29 de l'amulette",true, tab_cas[29][29] instanceof Amulette);
 	
-	@Test
-	public void testHerosNullAmuletteInitiale(){
-		//preparation des donnees
-		MonJeu mj = new MonJeu(31);
-		Amulette amu = (Amulette) mj.getObjet(0);
-		
-		//methode testee
-		Heros link = amu.getHeros();
-		//validation des donnees
-		assertEquals("Doit retourner la valeur null",null,link);
 	}
+
 	
 	@Test
 	public void testAmulettePriseHeros(){
 		//preparation des donnees
 		MonJeu mj = new MonJeu(31);
-		Amulette amu = (Amulette) mj.getObjet(0);
-		Commande coDroite = new Commande();
-		coDroite.droite=true;
-		Commande coBas = new Commande();
-		coBas.bas=true;
-		int posX = mj.getPj(0).getX();
-		int posY = mj.getPj(0).getY();
-		//methode testee
-		while(posX != 29){
-			mj.evoluer(coDroite);
-			posX= mj.getPj(0).getX();
-		}
-		while(posY != 29){
-			mj.evoluer(coBas);
-			posY = mj.getPj(0).getY();
-		}
+		Heros h = (Heros) mj.getPj(0);
+		Commande cmd = new Commande();
 		
-		Heros link = amu.getHeros();
-		boolean test=(link == mj.getPj(0));
-			
-		//validation des donnees
+		
+		h.setX(29);
+		h.setY(29);		
+		mj.evoluer(cmd);
+		
+		
+		h.setX(15);
+		h.setY(15);		
+		mj.evoluer(cmd);
+		
+		//methode testee
+		boolean test = h.isPossedeAmu();
+		
+		
+		//validation des tests
 		assertEquals("Doit retourner vrai si le heros a saisi l'amulette",true,test);
 	
 	}
 	
-	@Test
-	public void testDeplacementHeros(){
-		//preparation des donnees
-		MonJeu mj = new MonJeu(31);
-		Amulette amu = (Amulette) mj.getObjet(0);
-		Commande coHaut = new Commande();
-		coHaut.haut=true;
-		Heros link =(Heros) mj.getPj(0);
-		//methode testee
-		amu.setHeros(link);
-		amu.setX(link.getX());
-		amu.setY(link.getY());
-		mj.evoluer(coHaut);
-		boolean test = (link.getX()==amu.getHeros().getX() && link.getY()==amu.getHeros().getY());
-		//validation des donnees
-		
-		assertEquals("Les coordonnees de l'amulette doivent etre les meme que celle de son porteur",true,test);
-	}
+
 	
 	
 }
