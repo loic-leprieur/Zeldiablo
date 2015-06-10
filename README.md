@@ -33,4 +33,8 @@ Fonctionnalités réalisées :
 
        - 4.2 Attaque du joueur
 
+       - 4.5 Mort des monstres
+
        - 1.5 Cases piégées
+
+       
