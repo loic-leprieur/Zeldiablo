@@ -12,7 +12,8 @@ public abstract class Personnage {
 	/**
 	 * position en X et y
 	 */
-	protected int x,y,pv;
+	protected int x,y,pv,puissance;
+	boolean attaque;
 
 	/**
 	 * deplacer le personnage dans une direction
@@ -148,6 +149,16 @@ public abstract class Personnage {
 	}
 
 
+	public boolean isAttaque() {
+		return attaque;
+	}
+
+
+	public void setAttaque(boolean attaque) {
+		this.attaque = attaque;
+	}
+
+
 	public boolean estMort(){
 		
 		if(pv <= 0){
@@ -158,8 +169,14 @@ public abstract class Personnage {
 			
 			return false;
 		}
+	}
 		
+	public void attaque(Personnage victime){
+		attaque=true;
 		
+		victime.setPv(victime.getPv()-puissance);
+		
+		attaque=false;
 	}
 	
 	
