@@ -21,6 +21,8 @@ public class Heros extends Personnage{
 		
 		this.pv = 100;
 		this.possedeAmu = false;
+		this.puissance=5;
+		this.attaque=false;
 		
 		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
 			this.setX((MonJeu.TAILLE_PLATEAU - 1) / 2);
