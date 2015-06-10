@@ -124,12 +124,15 @@ public class MonJeu implements Jeu {
 
 		// on prend les coordonnees actuelles du personnage
 		for (int i = 0; i < pj.size(); i++) {
+			int posX = pj.get(i).getX();
+			int posY = pj.get(i).getY();
+
 			if (pj.get(i) instanceof Monstre && pj.get(i).estMort()) {
+				tab_cases[posX][posY].setOccupee(false);
 				pj.remove(i);
+				
 			} else {
-				int posX = pj.get(i).getX();
-				int posY = pj.get(i).getY();
-				// pour le choix aleatoire de direction
+								// pour le choix aleatoire de direction
 				int choix;
 				// pour la commande a effectuer selon si heros ou monstre
 				Commande commande;
