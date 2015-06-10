@@ -30,3 +30,7 @@ Fonctionnalités réalisées :
        - 5.4 Fin du jeu
 
        - 4.1 Attaque des monstres
+
+       - 4.2 Attaque du joueur
+
+       - 1.5 Cases piégées
