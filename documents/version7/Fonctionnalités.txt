@@ -1,22 +1,35 @@
-Fonctionnalites realisees dans cette version 5 :
+Fonctionnalites realisees dans cette version 7 :
 
 
 
-        - 3.1 Collision avec un monstre :
+        - 4.1 Attaque de monstre :
         
                 Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
                         
-                        + La collision fonctionne dans les 4 directions
-                        + Si la case est vide, le personnage avance
-                        + Le monstre se déplace à chaque fois après le joueur
+                        + Lorsque le mosntre est à coté du joueur, il attaque sans se déplacer
+                        + Si le monstre est loin du joueur il se déplace mais n'attaque pas 
+                        
                         
 -----------------------------------------------------------------------------------------------------------------------------------------------------
         
-        - 3.2 Fantômes :
+        - 4.2 Attaque du jouer :
         
                 Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
                 
-                        + Les fantômes peuvent traverser des murs mais pas les autres personnages (les autres monstres ou le héros)
-                        + Les autres monstres continuent à être bloqués par des murs
-                        + Les attaques des fantômes fonctionnent de la même manière que les attaques des monstres de base
-						
+                        + L'attaque est effectuée quand le joueur appuie sur la touche
+                        + Tous les monstres a coté du joueur prennent des dégats sauf ceux qui sont éloignés
+                        + S'il n'y a pas de monstre autour l'attaque a quand même lieu mais le joueur ne se déplace pas et les monstres ne prennent pas de dégats
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        - 4.5 Mort des monstres :
+        
+                Criteres de validation testes dans la classe TestsDeplacementAleatoireMonstre :
+			
+			+ Les monstres ont des points de vie qui ne peuvent pas être négatifs
+			+ Quand le monstre n'a plus de points de vie il disparait 
+			+ Le héros attaque avant le monstre
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        				
