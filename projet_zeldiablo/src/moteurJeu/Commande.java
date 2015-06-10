@@ -13,6 +13,7 @@ public class Commande {
 	 */
 	public boolean gauche, droite, haut, bas, attaque;
 
+
 	public Commande()
 	{
 		

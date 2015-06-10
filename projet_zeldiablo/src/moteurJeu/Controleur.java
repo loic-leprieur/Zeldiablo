@@ -112,7 +112,7 @@ public class Controleur implements KeyListener {
 	/**
 	 * ne fait rien
 	 */
-	public void keyTyped(KeyEvent e) {
+	public void keyTyped(KeyEvent e) {  
 
 	}
 
