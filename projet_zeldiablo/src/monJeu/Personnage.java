@@ -12,7 +12,7 @@ public abstract class Personnage {
 	/**
 	 * position en X et y
 	 */
-	protected int x,y;
+	protected int x,y,pv;
 
 	/**
 	 * deplacer le personnage dans une direction
@@ -20,7 +20,7 @@ public abstract class Personnage {
 	 * @param m
 	 *            la chaine permettant de deplacer le personnage (N,S, E ou O)
 	 *            
-	 */
+	 */ 
 	public void deplacer(Commande c) {
 		
 		if (c.gauche)
@@ -129,6 +129,22 @@ public abstract class Personnage {
 	
 	public void setY(int y) {
 		this.y = y;
+	}
+
+
+	/**
+	 * @return the pv
+	 */
+	public int getPv() {
+		return pv;
+	}
+
+
+	/**
+	 * @param pv the pv to set
+	 */
+	public void setPv(int pv) {
+		this.pv = pv;
 	}
 
 

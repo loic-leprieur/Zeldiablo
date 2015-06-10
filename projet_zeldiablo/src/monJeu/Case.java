@@ -123,7 +123,7 @@ public class Case {
 	
 	public String toString(){
 		
-		String type;
+		String type; 
 		
 		if(franchissable){
 			

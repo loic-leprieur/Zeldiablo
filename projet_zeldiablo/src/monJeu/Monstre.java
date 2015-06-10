@@ -16,6 +16,7 @@ public abstract class Monstre extends Personnage {
 	 */
 	public Monstre(){
 		
+		this.pv = 50;
 		this.setX(3);
 		this.setY(3);
 	

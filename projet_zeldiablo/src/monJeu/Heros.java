@@ -19,6 +19,7 @@ public class Heros extends Personnage{
 	 */
 	public Heros() {
 		
+		this.pv = 100;
 		this.possedeAmu = false;
 		
 		if((MonJeu.TAILLE_PLATEAU - 1)%2 == 0) {
@@ -56,6 +57,13 @@ public class Heros extends Personnage{
 		
 		crayon.setColor(Color.blue);
 		crayon.fillOval(getX() * taille_c, getY() * taille_c, taille_c, taille_c);
+		
+		crayon.setColor(Color.BLACK);
+		crayon.drawRect(getX() * taille_c, (getY() * taille_c) - 10, taille_c ,10 );
+		
+		
+		crayon.setColor(Color.GREEN);
+		crayon.fillRect((getX() * taille_c )+ 1, (getY() * taille_c) - 9, (int) (pv * 0.24) ,9 );
 		
 	}
 
