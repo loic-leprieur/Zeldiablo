@@ -43,7 +43,7 @@ public class MonJeu implements Jeu {
 		
 		try {
 			
-			fis = new FileReader("Labyrinthe.txt");
+			fis = new FileReader("src/Labyrinthe.txt");
 			BufferedReader br = new BufferedReader(fis);
 			
 			for(int i = 0; i < taille; i++){
