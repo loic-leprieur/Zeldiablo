@@ -7,11 +7,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import sun.applet.Main;
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
@@ -42,9 +45,10 @@ public class MonJeu implements Jeu {
 		FileReader fis;
 		
 		try {
-			
-			fis = new FileReader("src/Labyrinthe.txt");
-			BufferedReader br = new BufferedReader(fis);
+			InputStream test = Main.class.getResourceAsStream("/Labyrinthe.txt");
+			InputStreamReader stream = new InputStreamReader(test);
+			//fis = new FileReader("/Labyrinthe.txt");
+			BufferedReader br = new BufferedReader(stream);
 			
 			for(int i = 0; i < taille; i++){
 				
